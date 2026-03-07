@@ -20,7 +20,7 @@
       "@type": "Organization",
       "name": "VisaCaddy",
       "url": "https://www.visacaddy.online",
-      "logo": "https://www.visacaddy.online/assets/favicon/favicon.svg"
+      "logo": "https://www.visacaddy.online/assets/favicon/favicon-tab.png"
     }
     </script>
 
@@ -42,7 +42,8 @@
     <meta name="twitter:image" content="https://www.visacaddy.online/assets/images/og-image.jpg" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/favicon-tab.png" />
+    <link rel="apple-touch-icon" href="./assets/favicon/favicon-tab.png" />
     <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
     <!-- Fonts -->
@@ -54,37 +55,37 @@
 
     <style>
         :root {
-            /* Deeper midnight for maximum contrast with vibrant colors */
-            --bg: #05070f;
-            --bg2: #0a0d1a;
+            /* Minimalist Light Blue Theme */
+            --bg: #F4F7FB;
+            --bg2: #FFFFFF;
 
-            /* Surfaces - slightly more transparent to let gradients shine through */
-            --card: rgba(255, 255, 255, .04);
-            --card2: rgba(255, 255, 255, .07);
-            --stroke: rgba(255, 255, 255, .12);
+            /* Surfaces - Crisp and Clean */
+            --card: #FFFFFF;
+            --card2: #F8FAFD;
+            --stroke: #E2E8F0;
 
-            /* Typography - Crisp white and vibrant muted blue */
-            --text: #ffffff;
-            --muted: rgba(200, 220, 255, .8);
+            /* Typography - Dark Blue/Slate for readability */
+            --text: #1E293B;
+            --muted: #64748B;
 
             /* Effects */
-            --shadow: 0 25px 80px rgba(0, 0, 0, .8);
+            --shadow: 0 10px 40px rgba(15, 23, 42, .06);
             --radius: 22px;
             --gap: 18px;
             --max: 1180px;
 
-            /* Vibrant Neon Brand - Higher saturation */
-            --brand: #00f2ff;
-            /* Electric Cyan */
-            --brand2: #00ff9d;
-            /* Neon Mint */
-            --accent: #ffffff;
-            --navy: #0a1426;
-            --navy-light: #162a4d;
-            --silver: #e0e9f5;
-            --silver-light: #f8faff;
-            --gold-accent: #ffb800;
-            /* Vibrant Gold/Orange */
+            /* Brand Colors - Elegant Blue */
+            --brand: #2563EB;
+            /* Primary Blue */
+            --brand2: #3B82F6;
+            /* Lighter Blue */
+            --accent: #E0E7FF;
+            --navy: #0F172A;
+            --navy-light: #1E293B;
+            --silver: #E2E8F0;
+            --silver-light: #F1F5F9;
+            --gold-accent: #F59E0B;
+            /* Keep for warnings/accents if needed */
 
             --font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             --display: "Space Grotesk", Inter, system-ui, sans-serif;
@@ -104,9 +105,8 @@
             font-family: var(--font);
             color: var(--text);
             background:
-                radial-gradient(1200px 700px at 18% 18%, rgba(0, 242, 255, .15), transparent 50%),
-                radial-gradient(980px 620px at 82% 12%, rgba(0, 255, 157, .12), transparent 50%),
-                radial-gradient(820px 560px at 70% 86%, rgba(255, 184, 0, .08), transparent 55%),
+                radial-gradient(1200px 700px at 18% 18%, rgba(59, 130, 246, .08), transparent 50%),
+                radial-gradient(980px 620px at 82% 12%, rgba(37, 99, 235, .05), transparent 50%),
                 linear-gradient(180deg, var(--bg), var(--bg2));
             overflow-x: hidden;
         }
@@ -156,8 +156,8 @@
             justify-content: space-between;
             padding: 16px 20px;
             /* backdrop-filter removed for performance/jitter issues */
-            background: rgba(12, 20, 38, .92);
-            border-bottom: 1px solid rgba(205, 220, 240, .16);
+            background: rgba(255, 255, 255, .85);
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
         }
 
         .brand {
@@ -201,8 +201,8 @@
             color: var(--text);
             padding: 10px 12px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, .06);
-            background: rgba(255, 255, 255, .055);
+            border: 1px solid rgba(0, 0, 0, .05);
+            background: rgba(37, 99, 235, .05);
         }
 
         .mini__label {
@@ -229,7 +229,7 @@
             align-items: center;
             padding: 10px 18px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, .15);
+            border: 1px solid rgba(0, 0, 0, .05);
             background: var(--card2);
             color: var(--text);
             cursor: pointer;
@@ -245,10 +245,10 @@
         }
 
         .menuBtn:hover {
-            background: rgba(255, 255, 255, .12);
+            background: rgba(0, 0, 0, .05);
             border-color: var(--brand);
             transform: translateY(-1px);
-            box-shadow: 0 0 15px rgba(0, 242, 255, .1);
+            box-shadow: 0 0 15px rgba(37, 99, 235, .15);
         }
 
         .menuBtn:active {
@@ -296,7 +296,7 @@
         .menu__backdrop {
             position: fixed;
             inset: 0;
-            background: rgba(5, 7, 15, .96);
+            background: rgba(255, 255, 255, .6);
             /* backdrop-filter removed for performance/jitter issues */
             z-index: 9001;
             will-change: opacity;
@@ -311,9 +311,9 @@
             max-height: calc(100vh - 100px);
             overflow-y: auto;
             border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, .15);
-            background: rgba(10, 15, 30, .98);
-            box-shadow: 0 25px 80px rgba(0, 0, 0, .8), 0 0 60px rgba(0, 242, 255, .1);
+            border: 1px solid rgba(0, 0, 0, .05);
+            background: rgba(255, 255, 255, .98);
+            box-shadow: 0 25px 80px rgba(15, 23, 42, .1), 0 0 60px rgba(37, 99, 235, .05);
             padding: 24px;
             z-index: 9002;
             transition: transform .3s ease;
@@ -329,8 +329,8 @@
             content: "";
             position: absolute;
             inset: -2px;
-            background: radial-gradient(460px 240px at 30% 20%, rgba(0, 242, 255, .25), transparent 50%),
-                radial-gradient(400px 240px at 70% 40%, rgba(0, 255, 157, .20), transparent 55%);
+            background: radial-gradient(460px 240px at 30% 20%, rgba(37, 99, 235, .08), transparent 50%),
+                radial-gradient(400px 240px at 70% 40%, rgba(59, 130, 246, .05), transparent 55%);
             opacity: .95;
             pointer-events: none;
         }
@@ -356,7 +356,7 @@
         .menu__close {
             padding: 10px 12px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, .12);
+            border: 1px solid rgba(0, 0, 0, .1);
             background: var(--card2);
             color: var(--text);
             cursor: pointer;
@@ -378,7 +378,7 @@
             text-decoration: none;
             color: var(--text);
             border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card);
             font-family: var(--display);
             font-size: 18px;
@@ -395,9 +395,9 @@
 
         .menu__item:hover {
             transform: translateX(10px);
-            background: rgba(255, 255, 255, .08);
+            background: rgba(37, 99, 235, .05);
             border-color: var(--brand);
-            box-shadow: 0 10px 30px rgba(0, 242, 255, .15);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, .15);
         }
 
         .menu__meta {
@@ -410,7 +410,7 @@
         .pill {
             padding: 10px 12px;
             border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card);
             color: var(--muted);
             font-size: 12px;
@@ -429,8 +429,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(840px 420px at 22% 35%, rgba(0, 242, 255, .22), transparent 55%),
-                radial-gradient(720px 420px at 78% 30%, rgba(0, 255, 157, .18), transparent 55%);
+                radial-gradient(840px 420px at 22% 35%, rgba(37, 99, 235, .12), transparent 55%),
+                radial-gradient(720px 420px at 78% 30%, rgba(59, 130, 246, .08), transparent 55%);
             opacity: 1;
             pointer-events: none;
         }
@@ -472,7 +472,7 @@
         .badge {
             padding: 10px 12px;
             border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card);
             font-size: 13px;
             color: var(--muted);
@@ -500,7 +500,7 @@
             padding: 10px 12px;
             border-radius: 999px;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card2);
             color: var(--muted);
         }
@@ -523,9 +523,9 @@
         }
 
         .section--alt {
-            background: rgba(255, 255, 255, .045);
-            border-top: 1px solid rgba(255, 255, 255, .06);
-            border-bottom: 1px solid rgba(205, 220, 240, .16);
+            background: rgba(37, 99, 235, .03);
+            border-top: 1px solid rgba(0, 0, 0, .05);
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
         }
 
         .section__head {
@@ -561,9 +561,9 @@
         .stat {
             padding: 18px 18px 16px;
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card);
-            box-shadow: 0 18px 46px rgba(0, 0, 0, .35);
+            box-shadow: 0 18px 46px rgba(15, 23, 42, .05);
         }
 
         .stat__label {
@@ -582,7 +582,7 @@
         .stat__plus {
             margin-top: -10px;
             font-size: 18px;
-            color: rgba(255, 255, 255, .70);
+            color: var(--brand);
         }
 
         /* cards */
@@ -595,7 +595,7 @@
         .card {
             padding: 18px;
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card);
         }
 
@@ -605,12 +605,12 @@
             border-radius: 14px;
             display: grid;
             place-items: center;
-            border: 1px solid rgba(247, 201, 75, 0.4);
-            background: linear-gradient(135deg, rgba(247, 201, 75, 0.2), rgba(154, 114, 9, 0.1));
-            box-shadow: 0 0 15px rgba(247, 201, 75, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.05));
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.15);
             margin-bottom: 15px;
             font-size: 20px;
-            color: #FFE699;
+            color: #3B82F6;
         }
 
         .card__title {
@@ -643,7 +643,7 @@
         .panel {
             padding: 18px;
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, .12);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card2);
             box-shadow: var(--shadow);
         }
@@ -658,8 +658,8 @@
             display: flex;
             justify-content: space-between;
             padding: 10px 0;
-            border-bottom: 1px solid rgba(205, 220, 240, .16);
-            color: rgba(255, 255, 255, .82);
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+            color: var(--text);
         }
 
         .panel__row--strong {
@@ -669,7 +669,7 @@
 
         .panel__hr {
             height: 1px;
-            background: rgba(255, 255, 255, .10);
+            background: rgba(0, 0, 0, .05);
             margin: 12px 0;
         }
 
@@ -686,8 +686,8 @@
             gap: 10px;
             padding: 12px 14px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, .12);
-            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(0, 0, 0, .1);
+            background: var(--card2);
             color: var(--text);
             text-decoration: none;
             cursor: pointer;
@@ -696,7 +696,7 @@
 
         .btn:hover {
             transform: translateY(-1px);
-            background: rgba(255, 255, 255, .11);
+            background: rgba(0, 0, 0, .03);
         }
 
         .btn--ghost {
@@ -715,7 +715,7 @@
             gap: 24px;
             padding: 28px;
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, .10);
+            border: 1px solid rgba(0, 0, 0, .08);
             background: var(--card);
         }
 
@@ -742,7 +742,7 @@
             font-size: 20px;
             font-weight: 700;
             letter-spacing: .5px;
-            background: linear-gradient(135deg, #FFE699 0%, #F7C94B 40%, #D4A017 80%, #9A7209 100%);
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 40%, #1D4ED8 80%, #1E40AF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -753,13 +753,13 @@
             font-size: 9px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: rgba(247, 201, 75, .45);
+            color: rgba(37, 99, 235, .6);
         }
 
         .cta__divider {
             width: 1px;
             align-self: stretch;
-            background: rgba(255, 255, 255, .08);
+            background: rgba(0, 0, 0, .08);
             flex-shrink: 0;
         }
 
@@ -794,7 +794,7 @@
         /* footer */
         .footer {
             padding: 30px 0 46px;
-            border-top: 1px solid rgba(255, 255, 255, .06);
+            border-top: 1px solid rgba(0, 0, 0, .05);
         }
 
         .footer__inner {
@@ -920,8 +920,8 @@
             align-items: center;
             justify-content: center;
             gap: 0;
-            background: #EAE8E1;
-            /* Soft warm cream/gray, less bright */
+            background: #F4F7FB;
+            /* Light blue theme loader background */
             transition: opacity .6s cubic-bezier(0.4, 0, 0.2, 1), visibility .6s ease;
         }
 
@@ -1000,7 +1000,7 @@
         .loader__progress-bar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #D4A017, #9A7209);
+            background: linear-gradient(90deg, #3B82F6, #2563EB);
             border-radius: 999px;
             /* No glow in minimal mode */
         }
@@ -1100,20 +1100,20 @@
             <!-- Animated Brand SVG (Light Mode Version) -->
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <linearGradient id="printGold" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#D4A017" />
-                        <stop offset="100%" stop-color="#9A7209" />
+                    <linearGradient id="printBlue" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#3B82F6" />
+                        <stop offset="100%" stop-color="#1D4ED8" />
                     </linearGradient>
                 </defs>
-                <rect width="56" height="56" rx="14" fill="#F5F4EE" />
-                <rect width="56" height="56" rx="14" fill="none" stroke="#D1CEC5" stroke-width="1.5" />
+                <rect width="56" height="56" rx="14" fill="#FFFFFF" />
+                <rect width="56" height="56" rx="14" fill="none" stroke="#E2E8F0" stroke-width="1.5" />
                 <ellipse class="ld-anim-orbit" cx="28" cy="30" rx="19" ry="7" fill="none" stroke="#9CA3AF"
                     stroke-width="1.2" stroke-dasharray="3 4" opacity="0.6" transform="rotate(-15 28 30)" />
-                <path class="ld-anim-v" d="M 15 24 L 28 42 L 41 24" fill="none" stroke="url(#printGold)"
+                <path class="ld-anim-v" d="M 15 24 L 28 42 L 41 24" fill="none" stroke="url(#printBlue)"
                     stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-                <circle class="ld-anim-head" cx="28" cy="14" r="4.5" fill="url(#printGold)" />
+                <circle class="ld-anim-head" cx="28" cy="14" r="4.5" fill="url(#printBlue)" />
                 <path class="ld-anim-star" d="M 44 10 Q 44 13 47 13 Q 44 13 44 16 Q 44 13 41 13 Q 44 13 44 10"
-                    fill="url(#printGold)" />
+                    fill="url(#printBlue)" />
             </svg>
             <div class="loader__wordmark">VisaCaddy</div>
             <div class="loader__sub">WAH · WHS Service</div>
@@ -1130,21 +1130,21 @@
                 <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="navBg" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#1E202E" />
-                            <stop offset="100%" stop-color="#0B0C11" />
+                            <stop offset="0%" stop-color="#FFFFFF" />
+                            <stop offset="100%" stop-color="#F4F7FB" />
                         </linearGradient>
                         <linearGradient id="navBdr" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#F7C94B" stop-opacity="0.35" />
-                            <stop offset="100%" stop-color="#9A7209" stop-opacity="0.05" />
+                            <stop offset="0%" stop-color="#E2E8F0" />
+                            <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.5" />
                         </linearGradient>
                         <linearGradient id="navGld" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#FFE699" />
-                            <stop offset="35%" stop-color="#F7C94B" />
-                            <stop offset="100%" stop-color="#9A7209" />
+                            <stop offset="0%" stop-color="#60A5FA" />
+                            <stop offset="50%" stop-color="#3B82F6" />
+                            <stop offset="100%" stop-color="#2563EB" />
                         </linearGradient>
                         <linearGradient id="navAcc" x1="0" y1="1" x2="1" y2="0">
-                            <stop offset="0%" stop-color="#FFF0B3" />
-                            <stop offset="100%" stop-color="#F7C94B" />
+                            <stop offset="0%" stop-color="#93C5FD" />
+                            <stop offset="100%" stop-color="#3B82F6" />
                         </linearGradient>
                     </defs>
                     <rect width="56" height="56" rx="14" fill="url(#navBg)" />
@@ -1174,7 +1174,7 @@
 
             <div class="menu__grid">
                 <a class="menu__item" href="./index.html" data-cursor="link"
-                    style="border-color: var(--brand); background: rgba(0, 242, 255, .08);">
+                    style="border-color: var(--brand); background: rgba(37, 99, 235, .08);">
                     <span class="menu__item-label">01.</span> หน้าแรก ✓
                 </a>
                 <a class="menu__item" href="./about_wah.html" data-cursor="link">
@@ -1189,7 +1189,7 @@
                 <a class="menu__item" href="#contact" data-cursor="link">
                     <span class="menu__item-label">05.</span> ติดต่อเรา
                 </a>
-                <a class="menu__item" href="https://line.me/R/ti/p/@166epsjo" target="_blank" data-cursor="link"
+                <a class="menu__item" href="https://line.me/R/ti/p/@560pymys" target="_blank" data-cursor="link"
                     style="color: #06C755;">
                     <span class="menu__item-label">06.</span> LINE Official
                 </a>
@@ -1378,27 +1378,27 @@
                     <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="ctaBg" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#1E202E" />
-                                <stop offset="100%" stop-color="#0B0C11" />
+                                <stop offset="0%" stop-color="#FFFFFF" />
+                                <stop offset="100%" stop-color="#F4F7FB" />
                             </linearGradient>
                             <linearGradient id="ctaBdr" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#F7C94B" stop-opacity="0.35" />
-                                <stop offset="100%" stop-color="#9A7209" stop-opacity="0.05" />
+                                <stop offset="0%" stop-color="#E2E8F0" />
+                                <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.5" />
                             </linearGradient>
                             <linearGradient id="ctaGld" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#FFE699" />
-                                <stop offset="35%" stop-color="#F7C94B" />
-                                <stop offset="80%" stop-color="#D4A017" />
-                                <stop offset="100%" stop-color="#9A7209" />
+                                <stop offset="0%" stop-color="#60A5FA" />
+                                <stop offset="35%" stop-color="#3B82F6" />
+                                <stop offset="80%" stop-color="#2563EB" />
+                                <stop offset="100%" stop-color="#1D4ED8" />
                             </linearGradient>
                             <linearGradient id="ctaAcc" x1="0" y1="1" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#FFF0B3" />
-                                <stop offset="100%" stop-color="#F7C94B" />
+                                <stop offset="0%" stop-color="#93C5FD" />
+                                <stop offset="100%" stop-color="#3B82F6" />
                             </linearGradient>
                             <filter id="ctaGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.6" />
-                                <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#F7C94B"
-                                    flood-opacity="0.25" />
+                                <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.1" />
+                                <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#3B82F6"
+                                    flood-opacity="0.15" />
                             </filter>
                         </defs>
                         <rect width="56" height="56" rx="14" fill="url(#ctaBg)" />
@@ -1424,7 +1424,7 @@
                         สามารถติดต่อได้ทันทีผ่านช่องทางด้านล่างนี้</p>
                 </div>
                 <div class="cta__actions">
-                    <a class="btn" href="https://line.me/R/ti/p/@166epsjo" target="_blank" data-cursor="link">LINE
+                    <a class="btn" href="https://line.me/R/ti/p/@560pymys" target="_blank" data-cursor="link">LINE
                         Official</a>
                     <a class="btn btn--ghost" href="https://x.com/visa_buddy" target="_blank" data-cursor="link">Twitter
                         / X</a>

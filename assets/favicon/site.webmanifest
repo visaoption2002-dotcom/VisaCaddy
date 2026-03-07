@@ -3,12 +3,12 @@
   "short_name": "VC",
   "icons": [
     {
-      "src": "./favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "./favicon-tab.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
     }
   ],
-  "theme_color": "#05070f",
-  "background_color": "#05070f",
+  "theme_color": "#F4F7FB",
+  "background_color": "#FFFFFF",
   "display": "standalone"
 }

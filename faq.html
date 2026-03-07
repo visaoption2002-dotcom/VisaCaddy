@@ -39,7 +39,8 @@
     <meta name="twitter:image" content="https://www.visacaddy.online/assets/images/og-image.jpg" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/favicon-tab.png" />
+    <link rel="apple-touch-icon" href="./assets/favicon/favicon-tab.png" />
     <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
     <!-- Fonts -->
@@ -51,15 +52,16 @@
 
     <style>
         :root {
-            --bg: #05070f;
-            --bg2: #0a0d1a;
-            --card: rgba(255, 255, 255, .04);
-            --card2: rgba(255, 255, 255, .07);
-            --stroke: rgba(255, 255, 255, .12);
-            --text: #ffffff;
-            --muted: rgba(200, 220, 255, .8);
-            --brand: #00f2ff;
-            --brand2: #00ff9d;
+            /* Minimalist Light Blue Theme */
+            --bg: #F4F7FB;
+            --bg2: #FFFFFF;
+            --card: #FFFFFF;
+            --card2: #F8FAFD;
+            --stroke: #E2E8F0;
+            --text: #1E293B;
+            --muted: #64748B;
+            --brand: #2563EB;
+            --brand2: #3B82F6;
             --radius: 22px;
             --font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
             --display: "Space Grotesk", Inter, system-ui, sans-serif;
@@ -79,8 +81,8 @@
         body {
             font-family: var(--font);
             color: var(--text);
-            background: radial-gradient(1200px 700px at 18% 18%, rgba(0, 242, 255, .15), transparent 50%),
-                radial-gradient(980px 620px at 82% 12%, rgba(0, 255, 157, .12), transparent 50%),
+            background: radial-gradient(1200px 700px at 18% 18%, rgba(59, 130, 246, .08), transparent 50%),
+                radial-gradient(980px 620px at 82% 12%, rgba(37, 99, 235, .05), transparent 50%),
                 linear-gradient(180deg, var(--bg), var(--bg2));
             min-height: 100vh;
             line-height: 1.6;
@@ -102,8 +104,8 @@
             justify-content: space-between;
             padding: 16px 20px;
             backdrop-filter: blur(12px);
-            background: rgba(12, 20, 38, .55);
-            border-bottom: 1px solid rgba(205, 220, 240, .16);
+            background: rgba(255, 255, 255, .85);
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
         }
 
         .brand {
@@ -139,7 +141,7 @@
             align-items: center;
             padding: 10px 18px;
             border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, .15);
+            border: 1px solid rgba(0, 0, 0, .05);
             background: var(--card2);
             color: var(--text);
             cursor: pointer;
@@ -155,10 +157,10 @@
         }
 
         .menuBtn:hover {
-            background: rgba(255, 255, 255, .12);
+            background: rgba(0, 0, 0, .05);
             border-color: var(--brand);
             transform: translateY(-1px);
-            box-shadow: 0 0 15px rgba(0, 242, 255, .1);
+            box-shadow: 0 0 15px rgba(37, 99, 235, .15);
         }
 
         .menuBtn:active {
@@ -218,7 +220,7 @@
             border-radius: 18px;
             background: var(--card);
             border: 1px solid var(--stroke);
-            color: #fff;
+            color: var(--text);
             font-size: 16px;
             outline: none;
             transition: all 0.3s;
@@ -261,7 +263,7 @@
 
         .category-tab.active {
             background: var(--brand);
-            color: #000;
+            color: #fff;
             border-color: var(--brand);
         }
 
@@ -288,7 +290,7 @@
         }
 
         .faq-question:hover {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(0, 0, 0, 0.02);
         }
 
         .faq-question h3 {
@@ -362,7 +364,7 @@
         .menu__backdrop {
             position: fixed;
             inset: 0;
-            background: rgba(5, 7, 15, .85);
+            background: rgba(255, 255, 255, .6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             z-index: 9001;
@@ -378,9 +380,9 @@
             max-height: calc(100vh - 100px);
             overflow-y: auto;
             border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, .15);
-            background: rgba(10, 15, 30, .98);
-            box-shadow: 0 25px 80px rgba(0, 0, 0, .8);
+            border: 1px solid rgba(0, 0, 0, .05);
+            background: rgba(255, 255, 255, .98);
+            box-shadow: 0 25px 80px rgba(15, 23, 42, .1);
             padding: 24px;
             z-index: 9002;
             transition: transform .3s ease;
@@ -411,7 +413,7 @@
             border-radius: 12px;
             border: 1px solid var(--stroke);
             background: var(--card2);
-            color: #fff;
+            color: var(--text);
             cursor: pointer;
         }
 
@@ -427,7 +429,7 @@
             gap: 15px;
             padding: 20px;
             text-decoration: none;
-            color: #fff;
+            color: var(--text);
             border-radius: 18px;
             border: 1px solid var(--stroke);
             background: var(--card);
@@ -437,7 +439,8 @@
         .menu__item:hover {
             transform: translateX(10px);
             border-color: var(--brand);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(37, 99, 235, .05);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, .15);
         }
 
         .menu__item-label {
@@ -480,28 +483,28 @@
                 <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="navBg" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#1E202E" />
-                            <stop offset="100%" stop-color="#0B0C11" />
+                            <stop offset="0%" stop-color="#FFFFFF" />
+                            <stop offset="100%" stop-color="#F4F7FB" />
                         </linearGradient>
                         <linearGradient id="navBdr" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#F7C94B" stop-opacity="0.35" />
-                            <stop offset="100%" stop-color="#9A7209" stop-opacity="0.05" />
+                            <stop offset="0%" stop-color="#E2E8F0" />
+                            <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.5" />
                         </linearGradient>
                         <linearGradient id="navGld" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#FFE699" />
-                            <stop offset="35%" stop-color="#F7C94B" />
-                            <stop offset="100%" stop-color="#9A7209" />
+                            <stop offset="0%" stop-color="#60A5FA" />
+                            <stop offset="50%" stop-color="#3B82F6" />
+                            <stop offset="100%" stop-color="#2563EB" />
                         </linearGradient>
                         <linearGradient id="navAcc" x1="0" y1="1" x2="1" y2="0">
-                            <stop offset="0%" stop-color="#FFF0B3" />
-                            <stop offset="100%" stop-color="#F7C94B" />
+                            <stop offset="0%" stop-color="#93C5FD" />
+                            <stop offset="100%" stop-color="#3B82F6" />
                         </linearGradient>
                     </defs>
                     <rect width="56" height="56" rx="14" fill="url(#navBg)" />
                     <rect width="56" height="56" rx="14" fill="none" stroke="url(#navBdr)" stroke-width="1.5" />
-                    <path d="M 15 24 L 28 42 L 41 24" fill="none" stroke="url(#navGld)" stroke-width="5"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="28" cy="14" r="5" fill="url(#navAcc)" />
+                    <path class="nav-anim-v" d="M 15 24 L 28 42 L 41 24" fill="none" stroke="url(#navGld)"
+                        stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle class="nav-anim-head" cx="28" cy="14" r="5" fill="url(#navAcc)" />
                 </svg>
             </span>
             <span class="brand__text">VisaCaddy</span>
@@ -535,7 +538,7 @@
                 <a class="menu__item" href="./index.html#contact">
                     <span class="menu__item-label">05.</span> ติดต่อเรา
                 </a>
-                <a class="menu__item" href="https://line.me/R/ti/p/@166epsjo" target="_blank" style="color: #06C755;">
+                <a class="menu__item" href="https://line.me/R/ti/p/@560pymys" target="_blank" style="color: #06C755;">
                     <span class="menu__item-label">06.</span> LINE Official
                 </a>
             </div>
@@ -574,7 +577,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ลิงก์นี้เลย: <a href="http://dcywah.dcy.go.th/opp/app/register.php"
+                    <p>สามารถเข้าลิงก์ลงทะเบียนได้ที่: <a href="http://dcywah.dcy.go.th/opp/app/register.php"
                             target="_blank">http://dcywah.dcy.go.th/opp/app/register.php</a></p>
                 </div>
             </article>
@@ -585,7 +588,7 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เข้าไปที่ลิงก์ขอ Username โดยตรง เว็ปจะเปลี่ยนเป็นระบบขอ Username ให้เวลา 09:00 น.</p>
+                    <p>ให้เข้าไปที่ลิงก์ขอ Username โดยตรงครับ ระบบจะเปิดให้ขอ Username ในเวลา 09:00 น. ครับ</p>
                 </div>
             </article>
 
@@ -595,276 +598,307 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ทุกวันเวลา 09:00 น. ตามเวลาไทย ในช่วงวันที่กำหนดเท่านั้น</p>
+                    <p>ระบบจะเปิดรับทุกวันเวลา 09:00 น. ตามเวลาประเทศไทย เฉพาะในช่วงวันที่กำหนดเท่านั้นครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>กดขอ Username ควรกดจากคอมฯ หรือมือถือ?</h3>
+                    <h3>การกดขอ Username ควรดำเนินการผ่านคอมพิวเตอร์หรือโทรศัพท์มือถือ?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>กดได้ทั้งสองแบบ สำเร็จได้จากคอมฯ ต่อ LAN และจากมือถือผ่านเน็ตมือถือเหมือนกัน</p>
+                    <p>สามารถดำเนินการได้ทั้งสองอุปกรณ์ครับ
+                        โดยมีโอกาสสำเร็จทั้งจากการใช้คอมพิวเตอร์ที่เชื่อมต่อเครือข่าย LAN
+                        และการใช้โทรศัพท์มือถือผ่านเครือข่ายอินเทอร์เน็ตบนมือถือครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ควรใช้เบราว์เซอร์อะไรในการกด?</h3>
+                    <h3>ควรใช้เบราว์เซอร์ใดในการรับสิทธิ์?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>Chrome, Firefox หรือ Edge ก็ได้ แต่ Chrome นิยมสุดเพราะหลายคนแชร์ทริคกันมากที่สุด</p>
+                    <p>สามารถใช้ Google Chrome, Mozilla Firefox หรือ Microsoft Edge ได้ครับ แต่ Google Chrome
+                        จะได้รับความนิยมสูงสุดเนื่องจากมีการแบ่งปันเทคนิคการใช้งานมากที่สุดครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ชื่อต้องกรอกอย่างไรในฟอร์มภาษาอังกฤษ?</h3>
+                    <h3>การกรอกชื่อและนามสกุลในฟอร์มภาษาอังกฤษ ต้องดำเนินการอย่างไร?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>กรอกชื่อ–นามสกุลตาม Passport ได้เลย ระบบจะปรับเป็นตัวพิมพ์ใหญ่ให้เองในขั้นตอนถัดไป</p>
+                    <p>สามารถกรอกชื่อ-นามสกุลตามหนังสือเดินทาง (Passport) ได้เลยครับ
+                        ระบบจะปรับเป็นตัวพิมพ์ใหญ่ให้อัตโนมัติในขั้นตอนถัดไปครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ต้องพิมพ์ชื่อ–นามสกุลเป็นตัวพิมพ์ใหญ่ทั้งหมดหรือไม่?</h3>
+                    <h3>จำเป็นต้องพิมพ์ชื่อและนามสกุลเป็นตัวพิมพ์ใหญ่ทั้งหมดหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่ต้องครับ พิมพ์เล็ก–ใหญ่ก็ได้ ระบบจะเปลี่ยนเป็นตัวพิมพ์ใหญ่ให้อัตโนมัติ</p>
+                    <p>ไม่จำเป็นครับ สามารถพิมพ์เป็นตัวพิมพ์เล็กหรือใหญ่ก็ได้
+                        ระบบจะเปลี่ยนเป็นตัวพิมพ์ใหญ่ให้อัตโนมัติครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>อีเมลต้องกรอกตัวพิมพ์เล็ก–ใหญ่ให้ตรงเป๊ะไหม?</h3>
+                    <h3>การกรอกอีเมลจำเป็นต้องใช้ตัวพิมพ์เล็ก-ใหญ่ให้ตรงกันทั้งหมดหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>อีเมลไม่แยก case-sensitive แต่ต้องสะกดให้ถูกต้อง ถ้าสะกดผิด ระบบจะไม่ส่งเมลยืนยันให้</p>
+                    <p>อีเมลไม่มีการแยกแยะตัวพิมพ์เล็กหรือใหญ่ (Case-Sensitive) ครับ แต่ต้องระบุตัวสะกดให้ถูกต้องทั้งหมด
+                        หากสะกดผิด
+                        ระบบจะไม่สามารถจัดส่งอีเมลยืนยันได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ช่องกรอกที่อยู่ ต้องกรอกเป็นภาษาอะไร และใช้ที่อยู่ไหน?</h3>
+                    <h3>ช่องกรอกที่อยู่ จำเป็นต้องกรอกเป็นภาษาใด และใช้ที่อยู่ใด?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>กรอกตามทะเบียนบ้าน (ภาษาไทย)</p>
+                    <p>ให้กรอกตามที่อยู่ตามทะเบียนบ้านเป็นภาษาไทยครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ต้องเลือกคำนำหน้าหรือไม่?</h3>
+                    <h3>จำเป็นต้องเลือกคำนำหน้าชื่อหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เป็นฟิลด์บังคับ ถ้าไม่เลือก ระบบจะไม่บันทึกข้อมูล</p>
+                    <p>เป็นข้อมูลบังคับ (Required Field) ครับ หากไม่เลือก ระบบจะไม่สามารถบันทึกข้อมูลได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>เปิดหลายแท็บช่วยให้กดติดง่ายขึ้นไหม?</h3>
+                    <h3>การเปิดหน้าต่างหลายแท็บ (Tabs) จะช่วยให้กดรับสิทธิ์สำเร็จง่ายขึ้นหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ก่อนล็อกอินเปิดกี่แท็บก็ได้ แต่หลังล็อกอินแล้วให้ใช้แท็บเดียว เพื่อหลีกเลี่ยงข้อผิดพลาด</p>
+                    <p>ก่อนเข้าสู่ระบบ (Login) สามารถเปิดจำนวนกี่แท็บก็ได้ครับ แต่หลังจากเข้าสู่ระบบสำเร็จแล้ว
+                        ขอแนะนำให้ใช้งานเพียงแท็บเดียว เพื่อป้องกันข้อผิดพลาดที่อาจเกิดขึ้นในระบบครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ต้องรีเฟรชหน้าเว็บจนกว่าจะขึ้นฟอร์มกรอกไหม?</h3>
+                    <h3>ต้องรีเฟรช (Refresh) หน้าเว็บไซต์จนกว่าจะขึ้นฟอร์มให้กรอกข้อมูลหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช่ กด F5/Refresh แล้ว Submit ซ้ำไปเรื่อยๆ จนกว่าจะขึ้นข้อความ “บันทึกสำเร็จ”</p>
+                    <p>ใช่ครับ ท่านต้องทำการรีเฟรชหรือกด F5 แล้วดำเนินการกดยืนยันให้สำเร็จจนกว่าหน้าจอจะแสดงข้อความ
+                        “บันทึกสำเร็จ” ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ใช้ Chrome Autofill หรือสคริปต์ช่วยกรอกอัตโนมัติได้ไหม?</h3>
+                    <h3>สามารถใช้งาน Chrome Autofill หรือสคริปต์ช่วยกรอกข้อมูลอัตโนมัติได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ได้ แต่บางครั้งปุ่ม Import/Export อาจหาย ให้ตรวจสอบว่าติดตั้ง Extension ถูกต้องก่อน</p>
+                    <p>สามารถใช้งานได้ครับ แต่อาจมีกรณีที่ปุ่ม Import/Export ขัดข้อง ขอแนะนำให้ตรวจสอบและทดสอบ Extension
+                        ว่าสามารถใช้งานได้ตามปกติก่อนถึงเวลาเปิดรับสมัครครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ต้องเตรียมเอกสารอะไรบ้างในรอบขอ Username?</h3>
+                    <h3>ผู้สมัครต้องเตรียมเอกสารอะไรบ้างในรอบขอ Username?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>รอบนี้ไม่ต้องแนบเอกสารใด ๆ แต่ควรเตรียมให้พร้อมก่อนวันคัดตัวจริง เช่น รูปถ่าย, บัตรประชาชน,
-                        Passport, Bank Certificate, Email</p>
+                    <p>ในรอบนี้ยังไม่ต้องแนบเอกสารใด ๆ ครับ แต่ควรเตรียมเอกสารให้พร้อมก่อนวันคัดเลือกจริง เช่น รูปถ่าย
+                        บัตรประจำตัวประชาชน หนังสือเดินทาง (Passport) เอกสารรับรองทางการเงิน (Bank Certificate)
+                        และอีเมลครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>รูปถ่ายต้องขนาดเท่าไร พื้นหลังเป็นแบบไหน?</h3>
+                    <h3>รูปถ่ายต้องมีขนาดเท่าใด และพื้นหลังต้องเป็นรูปแบบใด?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>รูปหน้าตรง ขนาด 200 × 265 px พื้นหลังสีขาวหรือฟ้า ห้ามสวมหมวก/แว่นตาดำ และถ่ายไม่เกิน 3 เดือน</p>
+                    <p>ต้องเป็นรูปถ่ายหน้าตรง ขนาด 200 × 265 พิกเซล พื้นหลังสีขาวหรือสีฟ้า ไม่สวมหมวกหรือแว่นตาดำ
+                        และถ่ายไว้ไม่เกิน 3 เดือนครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="username">
                 <div class="faq-question">
-                    <h3>ถ้าพิมพ์อีเมลผิด ต้องทำอย่างไร?</h3>
+                    <h3>หากพิมพ์อีเมลผิด ต้องดำเนินการอย่างไร?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ถ้าสะกดไม่ตรงกับอีเมลจริง ระบบจะไม่เจอชื่อ ให้สมัครใหม่ด้วยอีเมลที่ถูกต้องเท่านั้น</p>
+                    <p>หากสะกดอีเมลไม่ตรงกับอีเมลที่ใช้งานจริง ระบบจะไม่พบข้อมูลครับ
+                        ผู้สมัครจะต้องดำเนินการสมัครใหม่ด้วยอีเมลที่ถูกต้องเท่านั้นครับ</p>
                 </div>
             </article>
 
             <!-- ───── การกดโควต้า ───── -->
             <article class="faq-item" data-category="quota">
                 <div class="faq-question">
-                    <h3>ลิงก์กดโควต้าต้องเหมือนกับหน้ากด Username ไหม?</h3>
+                    <h3>ลิงก์ในการกดโควตาต้องเป็นลิงก์เดียวกับหน้าขอ Username หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่ใช่ครับ โควต้าจะกดผ่าน URL ที่ลงท้ายด้วย <code>/opp/app/sch_yproject_project_member.php</code>
-                        ไม่ใช่ลิงก์เดียวกับหน้ากด Username</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>ตอนกดโควต้าต้องอัปโหลดเอกสารหรือเปล่า?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>ไม่ต้องครับ กดให้สำเร็จก่อน เอกสารจริงจะอัปโหลดในช่วงยื่นเอกสารหลังจากนั้น</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>ถ้ายังไม่มีพาสปอร์ต สามารถกดโควต้าก่อนได้ไหม แล้วค่อยไปทำพาสปอร์ตทีหลัง?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>ไม่ได้ครับ พาสปอร์ตต้องออกให้เรียบร้อยก่อนวันยื่นเอกสารกับทาง ด.ย.</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>ถ้าคำนำหน้าในบัตรประชาชนกับพาสปอร์ตไม่ตรงกัน ควรใส่อย่างไร?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>ให้ใส่ตามที่ระบุในพาสปอร์ตครับ (ในรอบโควต้าจะมีให้เลือกแค่ “นาย”, “นาง”, “นางสาว”)</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>Bank Certificate ต้องออกก่อนวันกดโควต้ากี่วัน?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>ออกก่อน 1 วันก็ใช้ได้ เช่น ออกวันที่ 26 มี.ค. เพื่อใช้กดวันที่ 27 มี.ค.</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>จะขอ Bank Certificate จากบัญชีคนอื่น (เช่น ของน้องสาว) ได้ไหม?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>แนะนำให้ใช้บัญชีของตัวเองครับ ไม่ควรใช้บัญชีผู้อื่น แม้จะนามสกุลเดียวกัน</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>ถ้าติดอันดับ 1–500 ถึงจะได้สิทธิ์ใช่ไหม?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>ถูกต้องครับ ระบบจะให้ผู้กด 500 คนแรกยื่นเอกสารได้เลย (มีสำรองอีก 800 คน เรียงตามลำดับหลังจากนั้น)
+                    <p>ไม่ใช่ครับ การกดรับโควตาจะต้องดำเนินการผ่าน URL พิเศษที่ลงท้ายด้วย
+                        <code>/opp/app/sch_yproject_project_member.php</code> ซึ่งจะแตกต่างจากลิงก์ของการขอ Username
+                        ครับ
                     </p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="quota">
                 <div class="faq-question">
-                    <h3>ช่วยกันล็อกอินแล้วกดพร้อมกันได้ไหม?</h3>
+                    <h3>ในขั้นตอนการกดรับโควตา จำเป็นต้องอัปโหลดเอกสารประกอบทันทีหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่ได้ครับ ระบบล็อกอินได้ครั้งละเครื่อง และไม่อนุญาตให้กดแทนหรือช่วยกันกด</p>
+                    <p>ไม่จำเป็นครับ ในขั้นตอนนี้ผู้สมัครเพียงแค่ต้องกดรับสิทธิ์ให้สำเร็จเท่านั้น
+                        ส่วนขั้นตอนการอัปโหลดหรือจัดส่งเอกสารจริง
+                        จะถูกกำหนดให้ดำเนินการในช่วงเวลาของการยื่นเอกสารในลำดับถัดไปครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="quota">
                 <div class="faq-question">
-                    <h3>ถ้า IELTS/PTE ยังไม่ออกผล สามารถสอบซ้ำให้ผลออกก่อน 27 มี.ค. แล้วกดโควต้าได้หรือไม่?</h3>
+                    <h3>หากยังไม่มีหนังสือเดินทาง (Passport) สามารถกดโควตาก่อน
+                        แล้วค่อยดำเนินการทำพาสปอร์ตในภายหลังได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้ครับ แต่ผลสอบใหม่ต้องออกก่อนวันที่ 27 มีนาคม</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>กดวันที่ 27 แล้วจะรู้ผลเลยไหม?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>รู้ผลทันทีบนหน้าเว็บ ถ้าขึ้นสถานะ “ยืนยันสำเร็จ” ก็สามารถพิมพ์เอกสารออกมาได้เลย</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>ถ้าไม่ติดใน 2,000 คนแรก จะมีสำรองไหม?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>มีครับ สำรองอีก 800 คน หากผู้หลักไม่ใช้สิทธิ์ จะเรียงจากสำรองขึ้นมาตามลำดับ</p>
-                </div>
-            </article>
-
-            <article class="faq-item" data-category="quota">
-                <div class="faq-question">
-                    <h3>รอบโควต้าปีนี้กดยากกว่าเดิมไหม?</h3>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>ยากขึ้นเล็กน้อยเพราะการแข่งขันสูงและเซิร์ฟเวอร์บางหน้าอาจล่ม แต่ถ้าเตรียมตัวดี ก็มีโอกาสสำเร็จ
+                    <p>ไม่สามารถทำได้ครับ
+                        หนังสือเดินทางจะต้องได้รับการออกให้ครบถ้วนและเรียบร้อยก่อนถึงวันกำหนดส่งเอกสารให้กับทาง ดย. ครับ
                     </p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="quota">
                 <div class="faq-question">
-                    <h3>ควรเตรียมอะไรบ้างก่อนวันจริง?</h3>
+                    <h3>หากคำนำหน้าชื่อในบัตรประชาชนกับหนังสือเดินทางไม่ตรงกัน ควรระบุอย่างไร?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ให้ระบุตามที่แสดงในหนังสือเดินทางครับ (ในรอบโควตาจะมีตัวเลือกเพียง "นาย", "นาง" และ "นางสาว"
+                        ครับ)</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>Bank Certificate ต้องดำเนินการขอก่อนวันกดโควตากี่วัน?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>สามารถขอให้ออกล่วงหน้าก่อน 1 วันก็สามารถใช้ได้ครับ เช่น ออกเอกสารในวันที่ 26 มีนาคม
+                        เพื่อใช้ยืนยันสำหรับการกดรับสิทธิ์ในวันที่ 27 มีนาคม ครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>สามารถใช้ Bank Certificate จากบัญชีของบุคคลอื่น (เช่น ของพี่น้อง) ได้หรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ขอแนะนำให้ใช้บัญชีธนาคารที่เป็นชื่อของตนเองเท่านั้นครับ ไม่ควรใช้บัญชีของบุคคลอื่น
+                        แม้ว่าจะเป็นบุคคลในครอบครัวที่มีนามสกุลเดียวกันก็ตามครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>หากได้ลำดับที่ 1-500 จึงจะได้รับสิทธิ์ใช่หรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ถูกต้องครับ ระบบจะกำหนดให้ผู้ที่กดรับสิทธิ์ได้ 500 ท่านแรก สามารถยื่นเอกสารได้ทันที
+                        (โดยมีรายชื่อสำรองอีก 800 ท่าน ซึ่งจะเรียงตามลำดับหลังจากนั้นครับ)
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>สามารถเข้าสู่ระบบและช่วยกันกดรับสิทธิ์พร้อมกันหลายคนได้หรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ไม่สามารถทำได้ครับ ระบบอนุญาตให้เข้าสู่ระบบได้เพียงครั้งละหนึ่งเครื่องเท่านั้น
+                        และไม่อนุญาตให้ผู้อื่นดำเนินการกดแทนหรือช่วยกันกดครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>กรณีผลสอบ IELTS/PTE ยังไม่ออก สามารถลงสอบใหม่เพื่อให้ผลออกก่อนวันที่ 27 มีนาคม
+                        แล้วนำมากดโควตาได้หรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ได้ครับ แต่ผลสอบรอบใหม่ดังกล่าวจำเป็นต้องออกให้ทราบผลอย่างเป็นทางการก่อนวันที่ 27 มีนาคม ครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>หากกดรับสิทธิ์ในวันที่ 27 แล้ว สามารถทราบผลได้ทันทีเลยหรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>จะสามารถทราบผลได้ทันทีผ่านหน้าเว็บไซต์ครับ หากระบบแสดงสถานะว่า “ยืนยันสำเร็จ”
+                        ท่านก็สามารถสั่งพิมพ์เอกสารออกมาเพื่อใช้ประกอบการยื่นได้เลยครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>หากไม่ติดรายชื่อใน 2,000 คนแรก จะมีโควตาสำรองให้อีกหรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>มีครับ โดยจะมีรายชื่อสำรองเตรียมไว้อีก 800 ท่าน
+                        หากมีผู้สมัครตัวจริงสละสิทธิ์หรือไม่ดำเนินการตามขั้นตอน
+                        ระบบจะทำการเลื่อนลำดับรายชื่อสำรองขึ้นมาแทนที่ตามลำดับครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>การกดรับโควตาในปีนี้มีความยากกว่าปีที่ผ่านมาหรือไม่?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>อาจจะมีความท้าทายมากขึ้นเล็กน้อยครับ
+                        เนื่องจากมีการแข่งขันที่สูงและเซิร์ฟเวอร์บางส่วนอาจเกิดความขัดข้องได้
+                        แต่หากท่านได้เตรียมความพร้อมมาอย่างดี ก็จะมีโอกาสประสบความสำเร็จอย่างแน่นอนครับ</p>
+                </div>
+            </article>
+
+            <article class="faq-item" data-category="quota">
+                <div class="faq-question">
+                    <h3>ควรเตรียมความพร้อมอย่างไรบ้างก่อนถึงวันกดรับสิทธิ์จริง?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
                     <ul>
-                        <li>เตรียมเอกสารสำคัญให้พร้อม (พาสปอร์ต, ผลสอบภาษา, Bank Certificate) ก่อน 27 มี.ค.</li>
-                        <li>อ่านประกาศและสรุปวิธีในกลุ่มให้เข้าใจ</li>
-                        <li>หาอินเทอร์เน็ตความเร็วสูง / ตั้งสติกดในวันจริง</li>
-                        <li>เตรียมใจรับ mental stress เพราะโอกาสมีครั้งเดียว สู้ ๆ!</li>
+                        <li>เตรียมเอกสารให้พร้อม (หนังสือเดินทาง, ผลการทดสอบภาษาอังกฤษ, เอกสารรับรองทางการเงิน)
+                            ก่อนวันที่ 27 มีนาคม</li>
+                        <li>ศึกษาประกาศหลักเกณฑ์และข้อกำหนดต่างๆ ให้เข้าใจอย่างละเอียด</li>
+                        <li>จัดเตรียมอินเทอร์เน็ตความเร็วสูง และมีสมาธิในช่วงเวลาในการกดรับสิทธิ์</li>
+                        <li>เนื่องจากโอกาสมีจำกัด กรุณาเตรียมความพร้อมอย่างเต็มที่ ทางทีมงานขอเป็นกำลังใจให้ครับ</li>
                     </ul>
                 </div>
             </article>
@@ -872,290 +906,322 @@
             <!-- ───── การยื่นเอกสาร ───── -->
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>Transcripts ขอหลังวันที่กดโควต้า ใช้ได้ไหมคะ?</h3>
+                    <h3>สามารถขอ Transcript หลังจากวันที่กดรับโควตาได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เอกสารรอบ ด.ย. ต้องออกก่อนวันที่กดโควต้า ส่วนรอบวีซ่า (Subsequent Visa) ถึงจะยื่นได้จริงคือ 1
-                        ก.ค. เท่านั้น</p>
+                    <p>สำหรับเอกสารที่ต้องใช้ยื่นกับ ดย. จะต้องออกก่อนวันกดรับโควตาครับ ส่วนรอบยื่นขอวีซ่า (Subsequent
+                        Visa) จึงจะสามารถยื่นเอกสารอื่นๆ ที่ได้ดำเนินการขอในภายหลังได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ถ้าว่างงาน ต้องเขียนอาชีพอะไรดีคะ?</h3>
+                    <h3>หากกรณีผู้สมัครอยู่ในสถานะว่างงาน ควรระบุในช่องอาชีพการทำงานอย่างไร?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>กรอก “ว่างงาน” หรือเครื่องหมาย “–” ก็ได้ ไม่มีผลต่อการพิจารณา</p>
+                    <p>สามารถกรอกว่า "ว่างงาน" หรือใส่เครื่องหมาย "–" ได้เลยครับ
+                        จะไม่มีผลกระทบต่อการพิจารณารับสิทธิ์ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ถ้าคำนำหน้าชื่อในใบสมัครผิด ด.ย. จะปัดตกไหม?</h3>
+                    <h3>หากคำนำหน้าชื่อในใบสมัครไม่ถูกต้อง ทาง ดย. จะปฏิเสธการพิจารณาหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ส่งเอกสารไปก่อนได้ ไม่เป็นประเด็นสำคัญ ทางกรรมการจะพิจารณาเบื้องต้นเอง</p>
+                    <p>สามารถกรอกและจัดส่งเอกสารไปก่อนได้ครับ เนื่องจากไม่ใช่ประเด็นสำคัญ
+                        ทางคณะกรรมการจะพิจารณาในเบื้องต้นให้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ควรถ่ายเอกสารสีหรือขาว-ดำดีคะ?</h3>
+                    <h3>ควรถ่ายเอกสารเป็นแบบสีหรือแบบขาว-ดำ?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ได้ทั้งสองแบบ ถ่ายสีจะสวยกว่า แต่ขาว-ดำก็ยอมรับได้</p>
+                    <p>สามารถใช้ได้ทั้งสองแบบครับ การถ่ายเอกสารสีจะมีความชัดเจนกว่า
+                        แต่แบบขาว-ดำก็เป็นที่ยอมรับได้เช่นเดียวกันครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>เซ็นสำเนาแล้วลงวันที่ก่อนวันส่งได้ไหม?</h3>
+                    <h3>สามารถเซ็นสำเนาถูกต้องและลงวันที่ล่วงหน้าก่อนวันจัดส่งเอกสารได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เซ็นได้ตั้งแต่วันที่กำหนด (10–22 เม.ย.) จะลงก่อนหรือวันเดียวกับวันส่งก็ได้</p>
+                    <p>สามารถเซ็นได้ตั้งแต่วันที่กำหนดไว้ (10–22 เมษายน) โดยจะลงวันที่ไว้ล่วงหน้า
+                        หรือลงวันที่เดียวกับวันจัดส่งก็ได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ตั้งชื่อไฟล์ยังไงดี?</h3>
+                    <h3>ควรตั้งชื่อไฟล์เอกสารอย่างไร?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ตั้งเป็น “ลำดับที่ + ชื่อ นามสกุล” (เช่น 0345 นายวีซ่า บัดดี้) แนะนำใส่ 0 นำหน้าให้ครบ 4 หลัก</p>
+                    <p>ควรตั้งชื่อรูปแบบ “ลำดับที่ + ชื่อ นามสกุล” (เช่น 0345 นายวีซ่า บัดดี้) ซึ่งแนะนำให้ใส่รหัส 0
+                        นำหน้าลำดับให้ครบ 4 หลักครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ลำดับในใบสมัครกับประกาศไม่ตรงกัน ต้องแก้ไหม?</h3>
+                    <h3>หากลำดับในใบสมัครกับในประกาศไม่ตรงกัน จำเป็นต้องแก้ไขหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ปริ้นออกมาอย่างเดิมได้เลย ไม่ต้องแก้ตามประกาศ</p>
+                    <p>สามารถพิมพ์เอกสารออกมาในรูปแบบเดิมได้เลยครับ ไม่จำเป็นต้องแก้ไขตามประกาศ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ปรับหน้าเอกสารยังไงให้เรียบร้อย กรณีฟอนต์ใหญ่เกิน?</h3>
+                    <h3>มีวิธีปรับหน้าเอกสารอย่างไรให้เรียบร้อย ในกรณีที่ตัวอักษรบนหน้าเว็บใหญ่เกินไป?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เปลี่ยนฟ้อนต์เป็น TH Sarabun, ปรับ scale ของ PDF ประมาณ 80–90% (เลื่อนดูให้พอดี)</p>
+                    <p>สามารถเปลี่ยนรูปแบบตัวอักษร (Font) เป็น TH Sarabun และปรับขนาดเปอร์เซ็นต์ (Scale) ของ PDF
+                        ให้เหลือประมาณ 80–90% เพื่อให้พอดีกับหน้ากระดาษครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ได้รับใบปริญญาแล้วแต่หาไม่เจอ ใช้ใบรับรองคุณวุฒิแทนได้ไหม?</h3>
+                    <h3>หากได้รับใบปริญญาบัตรแล้วแต่สูญหาย สามารถใช้ใบรับรองคุณวุฒิแทนได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ใบรับรองคุณวุฒิแทนได้ เพราะรับรองว่าจบจริง แต่ถ้าต้องการใบปริญญาบัตรชุดใหม่ก็ขอได้ตามปกติ</p>
+                    <p>สามารถใช้ใบรับรองคุณวุฒิแทนได้ครับ เนื่องจากเป็นเอกสารรับรองการจบการศึกษาเช่นเดียวกัน
+                        แต่หากต้องการนำใบปริญญาบัตรชุดใหม่มาใช้ กรุณาดำเนินการขอรับตามขั้นตอนของสถาบันต่อไปครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ลายเซ็นเป็นภาษาอังกฤษได้ไหม ถ้าไม่มีลายเซ็นต้องเขียนชื่อปกติ?</h3>
+                    <h3>สามารถใช้ลายเซ็นภาษาอังกฤษได้หรือไม่ และหากไม่มีลายเซ็นสามารถเขียนชื่อ-นามสกุลตามปกติได้หรือไม่?
+                    </h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เซ็นได้ทุกรูปแบบตามลายเซ็นที่มี หรือเขียนชื่อปกติก็ได้ ไม่บังคับ</p>
+                    <p>สามารถลงลายเซ็นได้ทุกรูปแบบตามที่ผู้สมัครมี หรือสามารถใช้วิธีการเขียนชื่อ-นามสกุลตามปกติได้ครับ
+                        ไม่มีการบังคับรูปแบบที่ตายตัวครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ตรงรายละเอียดผู้เข้าร่วมฯ เขียนเองได้ไหม? พยานให้เพื่อนเซ็นได้ไหม?</h3>
+                    <h3>รายละเอียดผู้เข้าร่วมโครงการสามารถเขียนเองได้หรือไม่ และพยานสามารถให้เพื่อนเซ็นแทนได้หรือไม่?
+                    </h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ผู้เข้าร่วมโครงการเขียนเองได้, พยานให้ใครเซ็นก็ได้</p>
+                    <p>บริเวณรายละเอียดผู้เข้าร่วมโครงการสามารถเขียนได้ด้วยตนเองครับ สำหรับในส่วนของพยาน
+                        สามารถให้บุคคลใดเซ็นรับรองก็ได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>สแกนพาสปอร์ตแค่หน้ารูป+ข้อมูลพอไหม?</h3>
+                    <h3>การสแกนหนังสือเดินทาง (Passport) จำเป็นต้องสแกนเฉพาะหน้าที่มีรูปถ่ายและข้อมูลส่วนตัวหรือไม่?
+                    </h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>สแกนแค่หน้าที่มีรูป+ข้อมูลก็พอ ไม่ต้องสแกนหน้าปกด้วย</p>
+                    <p>ถูกต้องครับ สามารถสแกนเฉพาะหน้าที่มีรูปภาพและข้อมูลส่วนตัวได้เลย ไม่จำเป็นต้องสแกนหน้าปกครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>bank certificates มีตราประทับสาขาแต่ไม่มีลายเซ็น จะได้ไหม?</h3>
+                    <h3>เอกสาร Bank Certificate ที่มีเพียงตราประทับของสาขาแต่ไม่มีลายเซ็นเจ้าหน้าที่
+                        สามารถใช้ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ใบนั้นได้เลย (อัพเดทจากปี ค.ศ. 2025)</p>
+                    <p>สามารถนำไปใช้ยื่นผ่านระบบได้เลยครับ (อ้างอิงจากข้อมูลล่าสุดในปี ค.ศ. 2025)</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>คุณแม่เสียชีวิตแล้ว ใส่ข้อมูลในช่องพ่อ-แม่ยังไง? / ชื่อพ่อในทะเบียนบ้านไม่ตรง ใส่ยังไง?</h3>
+                    <h3>ในกรณีที่มารดาเสียชีวิตแล้ว ควรกรอกข้อมูลบิดา-มารดาอย่างไร และหากชื่อบิดาไม่ตรงกับทะเบียนบ้าน
+                        ควรระบุอย่างไร?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>กรอกชื่อ-สกุล ระบุ “เสียชีวิต” ในช่องอาชีพ ช่องอื่นใช้ “–” ได้
-                        กรณีชื่อไม่ตรงให้แนบใบเปลี่ยนชื่อหรือทะเบียนบ้านที่แก้ไขแล้วเป็นหลักฐาน</p>
+                    <p>ให้กรอกชื่อ-นามสกุลตามปกติ และระบุคำว่า “เสียชีวิต” ในช่องอาชีพ ส่วนช่องอื่นๆ
+                        สามารถกรอกเครื่องหมาย “–” ได้ครับ
+                        กรณีชื่อไม่ตรง ให้แนบใบเปลี่ยนชื่อหรือทะเบียนบ้านฉบับที่ได้รับการแก้ไขแล้วเป็นหลักฐานแนบครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ส่งเอกสารวันแรก จะพิจารณา 500 คนแรกก่อนไหม?</h3>
+                    <h3>การจัดส่งเอกสารในวันแรก จะได้รับการพิจารณาในกลุ่ม 500 คนแรกก่อนหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่กำหนดตามวันส่ง เรียงตามลำดับในประกาศล่าสุดเท่านั้น ส่งวันไหนก็ได้ในช่วงที่กำหนด</p>
+                    <p>การจัดลำดับจะไม่ได้พิจารณาตามวันจัดส่งครับ โดยจะเรียงตามลำดับในประกาศล่าสุดเท่านั้น
+                        ท่านสามารถจัดส่งพัสดุในวันใดก็ได้ภายในช่วงเวลาที่กำหนด</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ผลสอบ IELTS ที่ปริ้นจากเว็บได้หรือขอ hard copy?</h3>
+                    <h3>สามารถพิมพ์ผลสอบ IELTS จากเว็บไซต์ได้เลย หรือจำเป็นต้องขอ Hard Copy จากศูนย์สอบ?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ปริ้นจากเว็บมาเซ็นสำเนาได้เลย ไม่จำเป็นต้อง hard copy</p>
+                    <p>สามารถพิมพ์เอกสารผลสอบจากเว็บไซต์และนำมาเซ็นรับรองสำเนาถูกต้องได้เลยครับ ไม่จำเป็นต้องขอตัวจริง
+                        (Hard Copy) จากศูนย์สอบครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>เอกสารแปลจำเป็นต้องรับรอง NAATI ไหม?</h3>
+                    <h3>เอกสารที่นำไปแปล จำเป็นต้องได้รับการรับรองจาก NAATI หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่จำเป็น ทั้งรอบ ด.ย. และตอนยื่นวีซ่า</p>
+                    <p>ไม่จำเป็นครับ ทั้งในรอบยื่นเอกสารกับ ดย. และขั้นตอนการยื่นขอวีซ่าครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>เอกสารแปลอายุเกิน 30 วันยังใช้ได้ไหม?</h3>
+                    <h3>เอกสารที่ผ่านการแปลแล้วและมีอายุเกิน 30 วัน ยังสามารถนำมาใช้ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ได้ถ้าข้อมูลในเอกสารยังไม่เปลี่ยน “30 วัน” เป็นเพียงแนวปฏิบัติ ไม่ใช่กฎตายตัว</p>
+                    <p>ยังสามารถใช้งานได้ครับ หากข้อมูลในเอกสารยังไม่มีการเปลี่ยนแปลง ระยะเวลา “30 วัน”
+                        เป็นเพียงข้อแนะนำเบื้องต้น ไม่ใช่ข้อบังคับที่ตายตัวครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>หนังสือรับรองการทำงานต้องออกไม่เกินกี่วันก่อนกด Apply?</h3>
+                    <h3>หนังสือรับรองการทำงานต้องออกล่วงหน้าไม่เกินกี่วันก่อนกดรับสิทธิ์?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>แนะนำออกก่อนวันกดโควต้า/ยื่นวีซ่าไม่เกิน 30 วัน</p>
+                    <p>ขอแนะนำให้ขอเอกสารก่อนวันกดรับโควตาหรือยื่นวีซ่า โดยให้เอกสารมีอายุไม่เกิน 30 วันครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="document">
                 <div class="faq-question">
-                    <h3>ถ้าไม่มี payslip จะใช้อะไรแทนพิสูจน์รายได้?</h3>
+                    <h3>หากไม่มีสลิปเงินเดือน (Payslip) สามารถใช้เอกสารใดแทนเพื่อพิสูจน์รายได้?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ Certificate of Employment หรือหนังสือรับรองเงินเดือน; ฟรีแลนซ์ใช้ invoice, receipt หรือ ภงด.
-                        90 แทนได้</p>
+                    <p>สามารถใช้เอกสาร Certificate of Employment หรือหนังสือรับรองเงินเดือนแทนได้ครับ
+                        สำหรับกรณีฟรีแลนซ์สามารถใช้ ใบแจ้งหนี้ (Invoice), ใบเสร็จรับเงิน (Receipt) หรือแบบแสดงรายการภาษี
+                        (ภ.ง.ด. 90) แทนได้เช่นกันครับ</p>
                 </div>
             </article>
 
             <!-- ───── การเงิน ───── -->
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>หลังออก Bank Certificate แล้ว ถอนหรือฝากเงินได้ไหม?</h3>
+                    <h3>หลังจากขอเอกสาร Bank Certificate แล้ว สามารถทำธุรกรรมถอนหรือฝากเงินได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้ค่ะ แต่ควรรักษายอดคงเหลือ ≥ 5,000 AUD (~118 k THB)
-                        และแนบหลักฐาน/คำอธิบายทุกครั้งที่มียอดเงินก้อนใหญ่เข้าออก</p>
+                    <p>สามารถทำธุรกรรมได้ครับ แต่ควรรักษายอดคงเหลือไม่ให้ต่ำกว่า 5,000 AUD (ประมาณ 118,000 บาท)
+                        และควรเตรียมหลักฐานหรือคำอธิบายประกอบเสมอ
+                        หากมีการทำธุรกรรมเข้า-ออกด้วยยอดเงินที่มีจำนวนสูงผิดปกติครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>ยื่น Bank Certificate อย่างเดียว (ไม่แนบ Statement) ได้หรือไม่?</h3>
+                    <h3>สามารถยื่นเฉพาะเอกสาร Bank Certificate โดยไม่แนบ Statement ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้สำหรับ WH New Zealand; หาก Immi ต้องการ Statement จะรีเควสต์เพิ่มเติมภายหลัง</p>
+                    <p>สามารถทำได้ในกรณีของวีซ่า WH นิวซีแลนด์ครับ แต่สำหรับออสเตรเลีย หากทางสถานทูตฯ ต้องการ Statement
+                        เพิ่มเติม จะส่งคำขอมาให้ส่งเอกสารประกอบในภายหลังครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>ใช้บัญชีพ่อแม่หรือสปอนเซอร์แทนได้ไหม ต้องทำ family-tree ไหม?</h3>
+                    <h3>สามารถใช้บัญชีของบิดามารดาหรือผู้สนับสนุน (Sponsor) แทนได้หรือไม่ และจำเป็นต้องทำแผนผังครอบครัว
+                        (Family Tree) หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้ ต้องแนบ Bank Cert + Statement ของสปอนเซอร์ จดหมายรับรองการสนับสนุนการเงิน และแผนผัง
-                        family-tree เพื่อยืนยันความสัมพันธ์</p>
+                    <p>สามารถใช้ได้ครับ โดยต้องแนบ Bank Certificate และ Statement ของผู้สนับสนุน
+                        พร้อมด้วยจดหมายรับรองการสนับสนุนทางการเงิน และแผนผังครอบครัว (Family Tree)
+                        เพื่อยืนยันความสัมพันธ์ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>Bank Certificate ลายเซ็นดิจิทัลใช้ได้ไหม?</h3>
+                    <h3>Bank Certificate ที่มีเพียงลายเซ็นอิเล็กทรอนิกส์ (Digital Signature) สามารถใช้ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ใช้ได้ (ส่วนใหญ่ยอมรับ) แต่บางธนาคารไทยยังต้องขอฉบับเซ็นสดที่สาขา</p>
+                    <p>ส่วนใหญ่ได้รับการยอมรับและสามารถใช้ได้ครับ
+                        แต่บางธนาคารในประเทศไทยอาจยังจำเป็นต้องขอฉบับที่ได้รับการเซ็นรับรองด้วยลายเซ็นจริงจากสาขาครับ
+                    </p>
                 </div>
             </article>
 
             <!-- ───── สุขภาพ ───── -->
             <article class="faq-item" data-category="health">
                 <div class="faq-question">
-                    <h3>ตรวจสุขภาพที่ IOM ราคาเท่าไร ใช้เวลานานไหม?</h3>
+                    <h3>การตรวจสุขภาพที่ IOM มีค่าใช้จ่ายเท่าใด และใช้ระยะเวลาการตรวจนานหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>กรุงเทพ ≈ 4-5 พันบาท ใช้เวลาหน้างานราว 2 ชม.; เชียงใหม่ ≈ 3.5 พันบาท Walk-in ก่อนเที่ยงได้
-                        ผลอัปโหลดตรงถึง Immi ไม่ต้องรอรับเอง</p>
+                    <p>สำหรับสาขากรุงเทพฯ มีค่าใช้จ่ายประมาณ 4,000-5,000 บาท ใช้เวลาดำเนินการหน้างานประมาณ 2 ชั่วโมงครับ
+                        สำหรับสาขาเชียงใหม่ มีค่าใช้จ่ายประมาณ 3,500 บาท และสามารถ Walk-in ก่อนช่วงเที่ยงได้ครับ
+                        โดยผลการตรวจจะถูกอัปโหลดตรงเข้าระบบสถานทูตฯ ทันที ผู้ตรวจไม่จำเป็นต้องนำส่งเองครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="health">
                 <div class="faq-question">
-                    <h3>ประกันสุขภาพต้องซื้อเมื่อไร และแบรนด์ไหนฮิตที่สุด?</h3>
+                    <h3>ควรดำเนินการซื้อประกันสุขภาพเมื่อใด และประกันของบริษัทใดที่ได้รับความนิยม?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>วีซ่าไม่บังคับแนบตอนยื่น แต่แนะนำซื้อ OSHC/Travel ก่อนบิน บริษัทที่นิยมคือ Bupa</p>
+                    <p>สำหรับวีซ่าไม่ได้มีข้อบังคับว่าต้องแนบประกันสุขภาพในขั้นตอนการยื่นครับ อย่างไรก็ตาม
+                        ขอแนะนำให้ทำการซื้อประกัน OSHC หรือประกันการเดินทาง ก่อนกำหนดวันเดินทางจริงครับ
+                        โดยบริษัทที่ได้รับความนิยม คือ Bupa ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="health">
                 <div class="faq-question">
-                    <h3>จองตรวจสุขภาพต้องรอ HAP ID / อีเมลยืนยันก่อนหรือเปล่า?</h3>
+                    <h3>ในการจองคิวตรวจสุขภาพ จำเป็นต้องรอรับ HAP ID หรืออีเมลยืนยันก่อนหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ต้องรอค่ะ HAP ID จะมากับอีเมล “Health Examination” หลัง Submit visa แล้วจึงโทร/จองกับโรงพยาบาลได้
+                    <p>จำเป็นต้องรอรับ HAP ID ครับ โดย HAP ID จะถูกจัดส่งมาพร้อมกับอีเมลแจ้งตรวจสุขภาพ (Health
+                        Examination) หลังจากที่ท่านได้ยื่นคำร้องขอวีซ่าเรียบร้อยแล้ว
+                        จึงจะสามารถนำข้อมูลไปนัดหมายกับทางโรงพยาบาลได้ครับ
                     </p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="health">
                 <div class="faq-question">
-                    <h3>ตรวจสุขภาพล่วงหน้าได้กี่เดือน? ผลมีอายุกี่ปี?</h3>
+                    <h3>สามารถตรวจสุขภาพล่วงหน้าได้กี่เดือน และผลการตรวจมีอายุกี่ปี?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ตรวจได้ทันทีที่ได้รับอีเมล HAP และต้องเข้าตรวจภายใน 28 วันจากวันที่ Immi สั่ง; ผลใช้ได้ 1 ปีเต็ม
+                    <p>สามารถเข้ารับการตรวจได้ทันทีที่ได้รับเอกสาร HAP ID ครับ และจะต้องดำเนินการตรวจภายในระยะเวลา 28
+                        วัน นับตั้งแต่วันที่สถานทูตฯ มีการออกคำสั่ง ส่วนผลการตรวจสุขภาพจะมีอายุรับรองการใช้งาน 1
+                        ปีเต็มครับ
                     </p>
                 </div>
             </article>
@@ -1163,34 +1229,39 @@
             <!-- ───── อื่นๆ ───── -->
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>ถ้าวีซ่า “ไม่ผ่าน” สามารถอุทธรณ์ได้ไหม?</h3>
+                    <h3>หากผลการพิจารณาวีซ่าไม่อนุมัติ สามารถขอใช้สิทธิ์ยื่นอุทธรณ์ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>WH AUS ไม่มีกระบวนการอุทธรณ์ แต่หากเอกสารสำคัญตกหล่น (เช่น Letter of Support)
-                        สามารถอีเมลไปยังหน่วยงานที่เกี่ยวข้องเพื่อขอทบทวนได้</p>
+                    <p>กระบวนการขอวีซ่า WAH ออสเตรเลีย ไม่มีกระบวนการยื่นอุทธรณ์ครับ แต่หากกรณียื่นเอกสารสำคัญตกหล่น
+                        (เช่น หนังสือรับรอง Letter of Support)
+                        ท่านสามารถส่งอีเมลไปยังหน่วยงานที่เกี่ยวข้องเพื่อขอพิจารณาทบทวนได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>ไปรับใบ ด.ย. เองต้องเตรียมอะไร? ถ้ามอบอำนาจทำอย่างไร?</h3>
+                    <h3>หากต้องการเดินทางไปรับใบรับรองฯ ดย. ด้วยตนเอง ต้องเตรียมเอกสารใดบ้าง
+                        และหากประสงค์จะมอบอำนาจต้องดำเนินการอย่างไร?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>รับเอง: บัตรประชาชน + ปากกา (หลีกเลี่ยงช่วงพักเที่ยง)<br>มอบอำนาจ: สำเนาบัตร ปชช. ผู้มอบ &amp;
-                        ผู้รับ พร้อมลายเซ็นสดทุกหน้า</p>
+                    <p>รับด้วยตนเอง: บัตรประจำตัวประชาชน + ปากกา (หลีกเลี่ยงช่วงเวลาพักเที่ยง)<br>มอบอำนาจ:
+                        สำเนาบัตรประจำตัวประชาชนของผู้มอบอำนาจและผู้รับมอบอำนาจ
+                        พร้อมลงลายมือชื่อรับรองสำเนาถูกต้องด้วยหมึกสดทุกหน้าครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>หลังวีซ่า granted ทำงานกับนายจ้างเดิมเกิน 6 เดือนในออสได้ไหม?</h3>
+                    <h3>หลังจากวีซ่าได้รับการอนุมัติ (Granted) สามารถทำงานกับนายจ้างเดิมเกิน 6
+                        เดือนในประเทศออสเตรเลียได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้ หากตำแหน่งอยู่ในกลุ่ม Tourism &amp; Hospitality (เช่น waiter, chef)
-                        ซึ่งรัฐบาลผ่อนปรนให้ไม่จำกัดชั่วโมง</p>
+                    <p>สามารถทำได้ครับ หากตำแหน่งงานอยู่ในกลุ่มอุตสาหกรรมการท่องเที่ยวและบริการ (Tourism &amp;
+                        Hospitality) เช่น พนักงานเสิร์ฟ หรือพ่อครัว
+                        ซึ่งทางรัฐบาลได้ผ่อนปรนให้สามารถทำงานได้โดยไม่จำกัดชั่วโมงครับ</p>
                 </div>
             </article>
 
@@ -1200,74 +1271,80 @@
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>เราพัฒนาระบบอัตโนมัติ (Automation) ที่มีความแม่นยำและรวดเร็วสูง
-                        เพื่อช่วยในการกรอกข้อมูลและกดรับสิทธิ์ในวันที่ระบบเปิด โดยเน้นความโปร่งใสและสิทธิ์เป็นของคุณ
-                        100%</p>
+                    <p>ทาง VisaCaddy ได้พัฒนาระบบอัตโนมัติ (Automation) ที่มีความแม่นยำและรวดเร็วสูง
+                        เพื่อช่วยในการกรอกข้อมูลและกดรับสิทธิ์ในวันที่ระบบเปิด
+                        โดยเน้นความโปร่งใสและสิทธิ์เป็นของผู้สมัคร
+                        100% ครับ</p>
                 </div>
             </article>
 
             <!-- ───── คำถามใหม่จาก OpenChat 2026 ───── -->
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>ควรเริ่มเตรียมเงินนอนบัญชีเมื่อไหร่?</h3>
+                    <h3>ควรเริ่มเตรียมจำนวนเงินในบัญชี (Statement) ไว้ตั้งแต่เมื่อใด?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ควรเริ่มตั้งแต่เดือน ก.ย.-ต.ค. จะได้ประมาณ 7-8 เดือนพอดีก่อนยื่นวีซ่า ถ้าให้ชัวร์ไม่ควรเกิน ม.ค.
-                        ของปีถัดไปครับ</p>
+                    <p>ควรเริ่มเตรียมความพร้อมตั้งแต่ช่วงเดือนกันยายน-ตุลาคม เพื่อให้มีระยะเวลาเดินบัญชีประมาณ 7-8
+                        เดือนก่อนยื่นขอวีซ่าครับ เพื่อความปลอดภัยไม่ควรเริ่มเตรียมเกินช่วงมกราคมของปีถัดไปครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>บัญชีเคลื่อนไหวได้ไหม หรือต้องนิ่งไว้เลย?</h3>
+                    <h3>บัญชีธนาคารสามารถมีความเคลื่อนไหวได้ปกติหรือไม่ หรือไม่ควรทำธุรกรรมใดๆ เลย?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>บัญชีสามารถโอนเข้าโอนออกได้ปกติ แต่ balance ยอดคงเหลือพยายามอย่าให้น้อยกว่า 120,000 บาท
-                        มากกว่าได้ น้อยกว่าไม่ควรครับ</p>
+                    <p>บัญชีสามารถมีธุรกรรมโอนเงินเข้า-ออกได้ตามปกติครับ แต่ควรพยายามรักษายอดคงเหลือ (Balance)
+                        ไม่ให้น้อยกว่า 120,000 บาทครับ สามารถมียอดมากกว่าได้ แต่ไม่ควรต่ำกว่าเกณฑ์นี้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>ปี 2025 อิมพิจารณาเข้มขึ้นไหม? ควรเตรียมเงินเท่าไร?</h3>
+                    <h3>ในปี 2025 สถานทูตฯ มีการพิจารณาที่เข้มงวดขึ้นหรือไม่ และควรเตรียมเงินจำนวนเท่าใด?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ปี 2025 อิมเรียกเอกสารเพิ่มหลายเคสมาก แนะนำเตรียมเผื่อไว้สัก 130,000 บาท
-                        เพราะในเว็บระบุว่าผู้สมัครต้องมี $6,000 หรือ $5,000 + ตั๋วขากลับครับ</p>
+                    <p>ในปี 2025 ทางสถานทูตฯ มีการเรียกขอเอกสารเพิ่มเติมในหลายกรณีครับ
+                        จึงขอแนะนำให้เตรียมเงินเผื่อไว้ประมาณ 130,000 บาท
+                        เนื่องจากในเว็บไซต์ได้ระบุถึงเงื่อนไขเพิ่มเติมว่าผู้สมัครต้องมีเงินครอบคลุมจำนวน $6,000 หรือ
+                        $5,000 รวมค่าตั๋วเครื่องบินขากลับครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>ใช้บัญชี Kept หรือบัญชีออนไลน์ยื่นได้ไหม?</h3>
+                    <h3>สามารถใช้บัญชี Kept หรือบัญชีเงินฝากออนไลน์อื่นๆ ในการยื่นขอวีซ่าได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้ครับ เพราะวีซ่ายื่นออนไลน์ คัดเอกสารส่งอิมได้เหมือนธนาคารปกติเลย</p>
+                    <p>สามารถทำได้ครับ เนื่องจากการยื่นขอวีซ่าเป็นรูปแบบออนไลน์
+                        ผู้สมัครสามารถคัดลอกและส่งเอกสารไปยังสถานทูตฯ ได้เช่นเดียวกับบัญชีธนาคารปกติครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>เงินกู้ใช้ยื่นวีซ่าได้ไหม?</h3>
+                    <h3>สามารถนำเงินที่ได้จากการกู้ยืมมายื่นขอวีซ่าได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่ได้ครับ เพราะขาดความมั่นคงทางการเงิน</p>
+                    <p>ไม่สามารถดำเนินการได้ครับ
+                        เนื่องจากจะแสดงให้เห็นถึงการขาดความมั่นคงและสภาพคล่องทางการเงินโดยข้อเท็จจริงครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="finance">
                 <div class="faq-question">
-                    <h3>รอบ ดย. กับรอบวีซ่า ใช้บัญชีสปอนต่างกันไหม?</h3>
+                    <h3>ในการยื่นเอกสารรอบ ดย. และรอบตรวจวีซ่า มีความแตกต่างในเรื่องการใช้บัญชีของผู้สนับสนุน (Sponsor)
+                        หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>รอบ ดย. ต้องเป็นบัญชีของผู้สมัครเท่านั้น ส่วนรอบวีซ่า
-                        สามารถใช้บัญชีผู้สมัครหรือสปอนเซอร์ก็ได้ครับ</p>
+                    <p>การยื่นเอกสารรอบ ดย. จำเป็นต้องใช้บัญชีของผู้สมัครเท่านั้น ในขณะที่การยื่นขอวีซ่า
+                        ผู้สมัครสามารถเลือกใช้บัญชีของตนเอง หรือของผู้แทนสนับสนุนก็ได้ครับ</p>
                 </div>
             </article>
 
@@ -1283,93 +1360,105 @@
 
             <article class="faq-item" data-category="health">
                 <div class="faq-question">
-                    <h3>สอบหลังกดยูสเซอร์ได้ ผลสอบจะออกทันไหม?</h3>
+                    <h3>หากสอบหลังจากการกดรับ Username ผลคะแนนสอบจะสามารถออกทันเวลาหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ถ้าสอบแบบคอมพิวเตอร์ ผลออกไม่กี่วัน แต่ต้องระวังเรื่องที่นั่งสอบอาจเต็ม
-                        และระยะเวลาที่ห่างกันอาจมีน้อย (13-20 วัน) ถ้าจะสอบหลังกดยูส ต้องแพลนดีๆครับ</p>
+                    <p>หากเป็นการสอบรูปแบบคอมพิวเตอร์ ผลการสอบมักออกภายในเวลาไม่กี่วันครับ
+                        อย่างไรก็ตามโปรดระมัดระวังเรื่องจำนวนที่นั่งสอบที่จำกัดและระยะเวลาการเปิดรับสมัครอาจมีเพียง
+                        13-20 วันเท่านั้น หากวางแผนจะสอบเพื่อนำผลคะแนนมาใช้ในกรณีหลัง
+                        ควรวางแผนการจัดการด้านระยะเวลาให้รอบคอบครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="health">
                 <div class="faq-question">
-                    <h3>IELTS กับ PTE อันไหนง่ายกว่า?</h3>
+                    <h3>การสอบ IELTS กับการสอบ PTE การทดสอบใดมีความง่ายกว่ากัน?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ขึ้นอยู่กับความถนัดของแต่ละคน แต่ถ้าเลเวล 4.5 หรือ 24 ไม่ยากเกินไปทั้งสองแบบครับ</p>
+                    <p>ข้อเท็จจริงขึ้นอยู่กับความถนัดของแต่ละบุคคลครับ อย่างไรก็ตามเกณฑ์ระดับการผ่าน 4.5 หรือ 24
+                        ไม่ถือว่ายากเกินไปสำหรับการทดสอบทั้งสองรูปแบบครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>พาสปอร์ตจะหมดอายุเดือน 5 ปี 2027 สมัครปี 2026 ได้ไหม?</h3>
+                    <h3>หากหนังสือเดินทาง (Passport) จะหมดอายุในเดือนพฤษภาคม 2027 จะสามารถสมัครรับสิทธิ์ในปี 2026
+                        ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>แนะนำไปต่ออายุใหม่ก่อนดีกว่าครับ เพื่อความสะดวกตลอดช่วงที่อยู่ออสเตรเลีย</p>
+                    <p>แนะนำให้ดำเนินการต่ออายุหนังสือเดินทางใหม่ก่อนการสมัครครับ
+                        เพื่อความสะดวกและครอบคลุมตลอดช่วงเวลาที่พำนักในประเทศออสเตรเลียครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="quota">
                 <div class="faq-question">
-                    <h3>กดเน็ตบ้านหรือเน็ตมือถือดี?</h3>
+                    <h3>ในการกดรับโควตา ควรใช้อินเทอร์เน็ตที่พักอาศัย หรืออินเทอร์เน็ตมือถือดีกว่ากัน?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ได้ทั้งสองแบบครับ มีคนกดผ่านทั้งคอมต่อ LAN และมือถือผ่านเน็ตมือถือ</p>
+                    <p>สามารถใช้ได้ทั้งสองแบบครับ
+                        มีประสบการณ์จากผู้สมัครหลายท่านที่สามารถกดรับโควตาได้สำเร็จทั้งจากการเชื่อมต่อคอมพิวเตอร์ข่าย
+                        LAN ผ่านอินเทอร์เน็ตที่พักอาศัย และแบบเครือข่ายมือถือครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="quota">
                 <div class="faq-question">
-                    <h3>วันแรกกดไม่ได้ ยังมีโอกาสไหม?</h3>
+                    <h3>หากไม่สามารถกดรับสิทธิ์ได้ในวันแรก ยังสามารถลุ้นรับสิทธิ์ในวันถัดไปได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>มีครับ วันที่ 2-8 ก็กดได้วันละ 500 คน ไม่ต้องตกใจถ้าวันแรกไม่ได้ ค่อยๆกด F5 ไปเรื่อยๆครับ</p>
+                    <p>ยังคงมีโอกาสครับ ขอเรียนให้ทราบว่าวันที่ 2 ถึงวันที่ 8 ทางหน่วยงานได้เพิ่มจำนวนการรับอีก 500
+                        ท่าน/วัน หากไม่สำเร็จในครั้งแรกไม่ต้องตกใจ ให้ท่านดำเนินการกด F5 หรือ Refresh
+                        เพื่อรอลุ้นรับโควตาในวันถัดไปได้ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>คนเป็นซึมเศร้าไป WAH ได้ไหม?</h3>
+                    <h3>ผู้ที่มีภาวะโรคซึมเศร้าสามารถเข้าร่วมโครงการ WAH ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่มีข้อห้ามครับ แต่แนะนำให้รักษาตัวให้เรียบร้อยก่อนเดินทาง เพราะต้องสู้ค่อนข้างมาก</p>
+                    <p>ไม่ได้มีข้อห้ามแต่อย่างใดครับ แต่ขอแนะนำให้พักรักษาภาวะของแต่ละบุคคลงดเดินทางก่อนนะครับ
+                        เนื่องจากจำเป็นต้องใช้แรงกายและจิตใจ ในการทำงานเป็นอย่างมากครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>เคยโดนปฏิเสธวีซ่า นร ออส ยื่น WAH ได้ไหม?</h3>
+                    <h3>หากเคยถูกปฏิเสธวีซ่านักเรียนออสเตรเลีย จะยังสามารถยื่นขอวีซ่า WAH ได้หรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ยื่นได้ครับ แต่แนะนำเตรียมเอกสารดีๆ</p>
+                    <p>สามารถยื่นสมัครได้ครับ
+                        อย่างไรก็ตามขอแนะนำให้เตรียมการเอกสารหลักฐานให้เรียบร้อยและครบถ้วนสมบูรณ์ครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>ไปถึงออสแล้วหางานยากไหม?</h3>
+                    <h3>เมื่อเดินทางถึงประเทศออสเตรเลียแล้ว การหางานทำจะมีความยากลำบากหรือไม่?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>ไม่ยากครับ งานเยอะมาก</p>
+                    <p>ไม่ยากลำบากครับ จะมีงานให้เลือกหลากหลายจากหลายภาคส่วนตามความถนัดของแต่ละบุคคลครับ</p>
                 </div>
             </article>
 
             <article class="faq-item" data-category="others">
                 <div class="faq-question">
-                    <h3>Pocket money พกไปเท่าไรดี?</h3>
+                    <h3>ควรพกเงินติดตัว (Pocket Money) ไปจำนวนเท่าใด?</h3>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
-                    <p>แล้วแต่คนครับ บางคนพกมาแค่ 1,500 ดอล บางคน 5,000-6,000 ดอล แต่ถ้าไม่ทำงาน 5,000 ดอลอยู่ได้สบายๆ
-                        1-3 เดือนครับ</p>
+                    <p>ขึ้นอยู่กับวิจารณญาณในแต่ละบุคคลครับ บางท่านพอจัดสรร 1,500 ดอลลาร์ออสเตรเลียได้ หรืออาจมากถึง
+                        5,000-6,000 ดอลลาร์ออสเตรเลียได้ครับ แต่หากท่านยังไม่ต้องการหางานทันที การมี 5,000
+                        ดอลลาร์ออสเตรเลีย จะสามารถพักอาศัยได้อย่างไม่มีปัญหาในระยะ 1-3 เดือนครับ</p>
                 </div>
             </article>
         </div>
