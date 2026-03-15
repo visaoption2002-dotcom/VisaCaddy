@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>แบบฟอร์มจำลองขอ Username WAH | ตัวอย่างหน้าเว็บ WAH | VisaCaddy</title>
+    <meta name="description"
+        content="หน้านี้เป็นแบบฟอร์มจำลองสำหรับดูตัวอย่างและฝึกทำความคุ้นเคยกับหน้าขอ Username WAH ไม่ใช่ระบบทางการหรือหน้าสมัครจริง" />
+    <meta name="keywords"
+        content="WAH, แบบฟอร์มจำลอง WAH, หน้าเว็บจำลอง WAH, ตัวอย่างหน้า username WAH, เดโมขอ username WAH, ทดลองกรอกข้อมูล WAH, mockup หน้า username WAH, ตัวอย่างหน้าลงทะเบียน WAH, หน้าเตรียมตัวก่อนกด WAH, ฝึกกรอกข้อมูล WAH" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/favicon/favicon-tab.png" />
+    <link rel="apple-touch-icon" href="./assets/favicon/favicon-tab.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #F4F7FB;
+            --bg2: #FFFFFF;
+            --card: #FFFFFF;
+            --card2: #F8FAFD;
+            --stroke: #E2E8F0;
+            --text: #1E293B;
+            --muted: #64748B;
+            --brand: #2563EB;
+            --font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            --display: "Space Grotesk", Inter, system-ui, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font);
+            color: var(--text);
+            background:
+                radial-gradient(1200px 700px at 18% 18%, rgba(59, 130, 246, .08), transparent 50%),
+                radial-gradient(980px 620px at 82% 12%, rgba(37, 99, 235, .05), transparent 50%),
+                linear-gradient(180deg, var(--bg), var(--bg2));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grid background */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(to right, rgba(0, 0, 0, .02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, .02) 1px, transparent 1px);
+            background-size: 90px 90px;
+            z-index: -1;
+        }
+
+        /* Topbar styling exactly like index.html */
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, .05);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .brand__mark {
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .brand__mark svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .brand__text {
+            font-family: var(--display);
+            letter-spacing: .2px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .menuBtn {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 0, 0, .05);
+            background: var(--card2);
+            color: var(--text);
+            cursor: pointer;
+            transition: transform .22s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color .22s ease,
+                border-color .22s ease,
+                box-shadow .22s ease,
+                color .22s ease;
+            user-select: none;
+            position: relative;
+            z-index: 1300;
+            will-change: transform;
+        }
+
+        .menuBtn:hover {
+            background: rgba(0, 0, 0, .05);
+            border-color: var(--brand);
+            transform: translateY(-1px);
+            box-shadow: 0 0 15px rgba(37, 99, 235, .15);
+        }
+
+        .menuBtn:active {
+            transform: translateY(0);
+        }
+
+        .menuBtn__label {
+            display: inline-block;
+            min-width: 5ch;
+            font-family: var(--display);
+            letter-spacing: .2em;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .menuBtn__hint {
+            opacity: .8;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .menuBtn:hover .menuBtn__hint {
+            transform: rotate(90deg);
+            color: var(--brand);
+        }
+
+        /* Menu Overlay */
+        .menu {
+            position: fixed;
+            inset: 0;
+            z-index: 9000;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s ease, visibility .3s ease;
+            will-change: opacity;
+        }
+
+        .menu.is-open {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .menu__backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, .6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 9001;
+            will-change: opacity;
+        }
+
+        .menu__panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -48%, 0);
+            width: min(920px, calc(100% - 40px));
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            border-radius: 28px;
+            border: 1px solid rgba(0, 0, 0, .05);
+            background: rgba(255, 255, 255, .98);
+            box-shadow: 0 25px 80px rgba(15, 23, 42, .1);
+            padding: 24px;
+            z-index: 9002;
+            transition: transform .3s ease;
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        .menu.is-open .menu__panel {
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        .menu__panel::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(460px 240px at 30% 20%, rgba(37, 99, 235, .08), transparent 50%),
+                radial-gradient(400px 240px at 70% 40%, rgba(59, 130, 246, .05), transparent 55%);
+            opacity: .95;
+            pointer-events: none;
+        }
+
+        .menu__panel>* {
+            position: relative;
+        }
+
+        .menu__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 6px 12px;
+        }
+
+        .menu__title {
+            font-family: var(--display);
+            letter-spacing: .22em;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .menu__close {
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            background: var(--card2);
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .menu__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            padding: 10px 6px 6px;
+        }
+
+        .menu__item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            padding: 24px 20px;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 18px;
+            border: 1px solid rgba(0, 0, 0, .08);
+            background: var(--card);
+            font-family: var(--display);
+            font-size: 18px;
+            transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .menu__item-label {
+            font-size: 14px;
+            color: var(--brand);
+            font-family: var(--font);
+            font-weight: 300;
+            opacity: .7;
+        }
+
+        .menu__item:hover {
+            transform: translateX(10px);
+            background: rgba(37, 99, 235, .05);
+            border-color: var(--brand);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, .15);
+        }
+
+        .menu__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 14px 6px 6px;
+        }
+
+        .pill {
+            padding: 10px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, .08);
+            background: var(--card);
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .menu__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu__panel {
+                width: calc(100% - 20px);
+                padding: 16px;
+                border-radius: 20px;
+            }
+
+            .menu__item {
+                font-size: 16px;
+                padding: 18px 16px;
+            }
+
+            .menuBtn {
+                padding: 8px 14px;
+            }
+
+            .menuBtn__label {
+                font-size: 11px;
+            }
+        }
+
+        /* Coming Soon Center Content */
+        .coming-soon-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-top: 64px;
+            /* offset for topbar */
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+            border: 1px solid #BFDBFE;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .icon-wrapper svg {
+            width: 40px;
+            height: 40px;
+            color: var(--brand);
+        }
+
+        h1 {
+            font-family: var(--display);
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin: 0 0 16px 0;
+            background: linear-gradient(135deg, #1E293B 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 400px;
+            margin: 0 0 32px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--brand);
+            border-radius: 20px;
+            font-family: var(--display);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--display);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            padding: 14px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .btn--primary {
+            color: var(--brand);
+            background: rgba(37, 99, 235, 0.08);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .btn--primary:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.35);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .btn--success {
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .btn--success:hover {
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.35);
+            filter: brightness(1.05);
+        }
+
+        .btn .btn-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .btn-icon {
+            transform: translateX(3px);
+        }
+
+        @keyframes btnAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn--appear {
+            animation: btnAppear 0.5s ease-out forwards;
+        }
+
+        /* Collapsible Preview Section */
+        .preview-wrapper {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .preview-toggle {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: 99px;
+            font-family: var(--display);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--muted);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .preview-toggle::-webkit-details-marker {
+            display: none;
+        }
+
+        .preview-toggle:hover {
+            color: var(--text);
+            border-color: #CBD5E1;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .preview-toggle svg {
+            transition: transform 0.3s ease;
+        }
+
+        details[open] .preview-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .preview-content {
+            margin-top: 16px;
+            background: var(--card);
+            padding: 12px;
+            border-radius: 20px;
+            border: 1px solid var(--stroke);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .preview-content img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar (navbar) -->
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <span class="brand__mark">
+                <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="navBg" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#FFFFFF" />
+                            <stop offset="100%" stop-color="#F4F7FB" />
+                        </linearGradient>
+                        <linearGradient id="navBdr" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#E2E8F0" />
+                            <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.5" />
+                        </linearGradient>
+                        <linearGradient id="navGld" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#60A5FA" />
+                            <stop offset="50%" stop-color="#3B82F6" />
+                            <stop offset="100%" stop-color="#2563EB" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="56" height="56" rx="14" fill="url(#navBg)" />
+                    <rect width="56" height="56" rx="14" fill="none" stroke="url(#navBdr)" stroke-width="1.5" />
+                    <path class="nav-anim-v" d="M 15 24 L 28 42 L 41 24" fill="none" stroke="url(#navGld)"
+                        stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle class="nav-anim-head" cx="28" cy="14" r="5" fill="#3B82F6" />
+                </svg>
+            </span>
+            <span class="brand__text">VisaCaddy</span>
+        </a>
+
+        <button class="menuBtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuOverlay">
+            <span class="menuBtn__label" id="menuBtnLabel">MENU</span>
+            <span class="menuBtn__hint">☰</span>
+        </button>
+    </header>
+
+    <!-- Fullscreen Menu Overlay -->
+    <aside class="menu" id="menuOverlay" aria-hidden="true">
+        <div class="menu__panel">
+            <div class="menu__top">
+                <div class="menu__title">VISACADDY NAVIGATION</div>
+                <button class="menu__close" id="menuClose" type="button">CLOSE ✕</button>
+            </div>
+            <div class="menu__grid">
+                <a class="menu__item" href="./index.html">
+                    <span class="menu__item-label">01.</span> หน้าแรก
+                </a>
+                <a class="menu__item" href="./faq.html">
+                    <span class="menu__item-label">02.</span> คำถามที่พบบ่อย
+                </a>
+                <a class="menu__item" href="./resite_photo.html">
+                    <span class="menu__item-label">03.</span> ปรับขนาดภาพ
+                </a>
+                <a class="menu__item" href="./about_wah.html">
+                    <span class="menu__item-label">04.</span> เกี่ยวกับ WAH ไทย-ออสเตรเลีย
+                </a>
+                <a class="menu__item" href="wah-username-demo.html"
+                    style="border-color: var(--brand); background: rgba(0, 242, 255, .08);">
+                    <span class="menu__item-label">05.</span> แบบฟอร์มทดลองขอ Username ✓
+                </a>
+                <a class="menu__item" href="./index.html#contact">
+                    <span class="menu__item-label">06.</span> ติดต่อเรา
+                </a>
+                <a class="menu__item" href="https://line.me/R/ti/p/@560pymys" target="_blank" style="color: #06C755;">
+                    <span class="menu__item-label">07.</span> LINE Official
+                </a>
+            </div>
+            <div class="menu__meta">
+                <div class="pill">WAH 2026 AVAILABLE</div>
+                <div class="pill">PDPA COMPLIANT</div>
+            </div>
+        </div>
+        <div class="menu__backdrop" id="menuBackdrop" aria-hidden="true"></div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="coming-soon-container">
+
+        <div id="status-badge" class="badge" style="background: rgba(225, 29, 72, 0.1); color: #E11D48;">OUT OF HOURS
+        </div>
+
+        <div class="icon-wrapper"
+            style="background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%); border-color: #FECDD3; color: #E11D48; box-shadow: 0 10px 30px rgba(225, 29, 72, 0.15);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+
+        <h2
+            style="font-family: var(--display); font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: #475569; margin: 0 0 12px 0; letter-spacing: -0.5px;">
+            หน้าเว็บจำลองสำหรับทำความคุ้นชินกับขั้นตอนขอ Username WAH
+        </h2>
+        <h1 id="status-title"
+            style="background: linear-gradient(135deg, #1E293B 0%, #E11D48 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: clamp(36px, 5vw, 48px); margin: 0 0 16px 0;">
+            อยู่นอกเวลา</h1>
+
+        <p id="status-desc">ระบบจะเปิดให้ใช้งานในวันที่ 15 เวลา 09:00 น.</p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown-container"
+            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 32px; font-family: 'Space Grotesk', Tahoma, sans-serif;">
+            <div class="countdown-item"
+                style="background: var(--card); padding: 16px 20px; border-radius: 16px; border: 1px solid var(--stroke); box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-width: 80px;">
+                <div id="cd-days" style="font-size: 32px; font-weight: 700; color: #E11D48; line-height: 1;">00</div>
+                <div
+                    style="font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;">
+                    Days</div>
+            </div>
+            <div class="countdown-item"
+                style="background: var(--card); padding: 16px 20px; border-radius: 16px; border: 1px solid var(--stroke); box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-width: 80px;">
+                <div id="cd-hours" style="font-size: 32px; font-weight: 700; color: #E11D48; line-height: 1;">00</div>
+                <div
+                    style="font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;">
+                    Hours</div>
+            </div>
+            <div class="countdown-item"
+                style="background: var(--card); padding: 16px 20px; border-radius: 16px; border: 1px solid var(--stroke); box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-width: 80px;">
+                <div id="cd-minutes" style="font-size: 32px; font-weight: 700; color: #E11D48; line-height: 1;">00</div>
+                <div
+                    style="font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;">
+                    Mins</div>
+            </div>
+            <div class="countdown-item"
+                style="background: var(--card); padding: 16px 20px; border-radius: 16px; border: 1px solid var(--stroke); box-shadow: 0 4px 15px rgba(0,0,0,0.05); min-width: 80px;">
+                <div id="cd-seconds" style="font-size: 32px; font-weight: 700; color: #E11D48; line-height: 1;">00</div>
+                <div
+                    style="font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase;">
+                    Secs</div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a class="btn btn--primary" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+                กลับสู่หน้าแรก
+            </a>
+
+            <a id="simulationBtn" class="btn btn--success" href="ussername_updated_2025.html" style="display: none;">
+                หน้าเว็ปจำลอง
+                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="preview-wrapper">
+            <details>
+                <summary class="preview-toggle">
+                    ดูตัวอย่างหน้าต่างขอ Username โครงการ WAH
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <div class="preview-content">
+                    <img src="./assets/images/wah-username-preview.png" alt="ตัวอย่างหน้าขอ Username WAH"
+                        loading="lazy" />
+                </div>
+            </details>
+        </div>
+
+    </main>
+
+    <script>
+        // Countdown Logic & Time Windows
+        const LAUNCH_DATE = new Date("March 15, 2026 09:00:00");
+        const cdDays = document.getElementById('cd-days');
+        const cdHours = document.getElementById('cd-hours');
+        const cdMinutes = document.getElementById('cd-minutes');
+        const cdSeconds = document.getElementById('cd-seconds');
+        const statusTitle = document.getElementById('status-title');
+        const statusDesc = document.getElementById('status-desc');
+        const statusBadge = document.getElementById('status-badge');
+        const simBtn = document.getElementById('simulationBtn');
+        const countdownContainer = document.getElementById('countdown');
+
+        function setAvailableState(isAvailable, nextTimeText = null) {
+            if (isAvailable) {
+                if (statusBadge) {
+                    statusBadge.innerText = "AVAILABLE";
+                    statusBadge.style.background = "rgba(16, 185, 129, 0.1)";
+                    statusBadge.style.color = "#10B981";
+                }
+                if (simBtn) {
+                    simBtn.style.display = "inline-flex";
+                    simBtn.classList.add("btn--appear");
+                }
+                if (statusTitle) {
+                    statusTitle.innerText = "พร้อมใช้งานแล้ว";
+                    statusTitle.style.background = "linear-gradient(135deg, #1E293B 0%, #10B981 100%)";
+                    statusTitle.style.webkitBackgroundClip = "text";
+                    statusTitle.style.webkitTextFillColor = "transparent";
+                }
+                if (statusDesc) {
+                    statusDesc.innerHTML = "ระบบเปิดให้ใช้งานแล้ว<br/>จำกัดเวลาช่วง 09:00-10:00 น. และ 18:00-19:00 น. กรุณารีบเข้าใช้งาน";
+                }
+                if (countdownContainer) {
+                    countdownContainer.style.display = "none";
+                }
+            } else {
+                if (statusBadge) {
+                    statusBadge.innerText = "OUT OF HOURS";
+                    statusBadge.style.background = "rgba(225, 29, 72, 0.1)";
+                    statusBadge.style.color = "#E11D48";
+                }
+                if (simBtn) {
+                    simBtn.style.display = "none";
+                }
+                if (statusTitle) {
+                    statusTitle.innerText = "อยู่นอกเวลา";
+                    statusTitle.style.background = "linear-gradient(135deg, #1E293B 0%, #E11D48 100%)";
+                    statusTitle.style.webkitBackgroundClip = "text";
+                    statusTitle.style.webkitTextFillColor = "transparent";
+                }
+                if (statusDesc && nextTimeText) {
+                    statusDesc.innerHTML = `${nextTimeText}<br/><span style="font-size: 13px; opacity: 0.8;">(เปิดให้ใช้งานทุกวัน 09:00-10:00 น. และ 18:00-19:00 น.)</span>`;
+                }
+                if (countdownContainer) {
+                    countdownContainer.style.display = "flex";
+                }
+            }
+        }
+
+        function getNextTargetDate(now) {
+            // First, if today is before the LAUNCH_DATE, always count down to LAUNCH_DATE
+            if (now.getTime() < LAUNCH_DATE.getTime()) {
+                return LAUNCH_DATE;
+            }
+
+            const currentHour = now.getHours();
+
+            // Check if we are currently IN the allowed window (09:00-09:59 or 18:00-18:59)
+            if ((currentHour >= 9 && currentHour < 10) || (currentHour >= 18 && currentHour < 19)) {
+                return null; // Signals that we are available
+            }
+
+            // Determine the next target
+            let target = new Date(now);
+            target.setMinutes(0);
+            target.setSeconds(0);
+            target.setMilliseconds(0);
+
+            if (currentHour < 9) {
+                target.setHours(9);
+            } else if (currentHour < 18) {
+                target.setHours(18);
+            } else {
+                // Next day at 9 AM
+                target.setDate(target.getDate() + 1);
+                target.setHours(9);
+            }
+
+            return target;
+        }
+
+        const countdownInterval = setInterval(function () {
+            const now = new Date();
+            const targetDate = getNextTargetDate(now);
+
+            // If targetDate is null, we are inside an allowed time window
+            if (!targetDate) {
+                setAvailableState(true);
+                return;
+            }
+
+            // If we have a target date, we are OUT OF HOURS, calculate difference
+            const distance = targetDate.getTime() - now.getTime();
+
+            let descText = "";
+            if (targetDate.getTime() === LAUNCH_DATE.getTime()) {
+                descText = "ระบบจะเปิดให้ใช้งานในวันที่ 15 เวลา 09:00 น.";
+            } else {
+                const hoursStr = targetDate.getHours().toString().padStart(2, '0');
+                const minsStr = targetDate.getMinutes().toString().padStart(2, '0');
+                descText = `ระบบจะเปิดให้ใช้งานอีกครั้งเวลา ${hoursStr}:${minsStr} น.`;
+            }
+            setAvailableState(false, descText);
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (cdDays) cdDays.innerText = days.toString().padStart(2, '0');
+            if (cdHours) cdHours.innerText = hours.toString().padStart(2, '0');
+            if (cdMinutes) cdMinutes.innerText = minutes.toString().padStart(2, '0');
+            if (cdSeconds) cdSeconds.innerText = seconds.toString().padStart(2, '0');
+
+        }, 1000);
+
+        // Menu Overlay
+        const menuBtn = document.getElementById("menuBtn");
+        const menuBtnLabel = document.getElementById("menuBtnLabel");
+        const menu = document.getElementById("menuOverlay");
+        const menuClose = document.getElementById("menuClose");
+        const menuBackdrop = document.getElementById("menuBackdrop");
+
+        function openMenu() {
+            document.body.classList.add("menu-open");
+            menu.classList.add("is-open");
+            menu.setAttribute("aria-hidden", "false");
+            menuBtn.setAttribute("aria-expanded", "true");
+            menuBtnLabel.textContent = "CLOSE";
+        }
+        function closeMenu() {
+            menu.classList.remove("is-open");
+            menu.setAttribute("aria-hidden", "true");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtnLabel.textContent = "MENU";
+            document.body.classList.remove("menu-open");
+        }
+
+        if (menuBtn) {
+            menuBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (menu.classList.contains("is-open")) closeMenu();
+                else openMenu();
+            });
+        }
+        if (menuClose) menuClose.addEventListener("click", closeMenu);
+        if (menuBackdrop) menuBackdrop.addEventListener("click", closeMenu);
+
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && menu.classList.contains("is-open")) closeMenu();
+        });
+
+        document.querySelectorAll(".menu__item").forEach((a) => {
+            a.addEventListener("click", closeMenu);
+        });
+    </script>
+</body>
+
+</html>
